@@ -1,3 +1,10 @@
 /node_modules/
 /lib/
 .bsb.lock
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
