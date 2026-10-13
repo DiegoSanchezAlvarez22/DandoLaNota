@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 52922571}
   - component: {fileID: 52922570}
   - component: {fileID: 52922569}
+  - component: {fileID: 52922573}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -376,6 +377,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52922573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52922568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 13
+  punishmentPoints: 0
 --- !u!1 &152034422
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +594,7 @@ GameObject:
   - component: {fileID: 278674539}
   - component: {fileID: 278674538}
   - component: {fileID: 278674537}
+  - component: {fileID: 278674541}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -680,6 +697,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &278674541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278674536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 12
+  punishmentPoints: 0
 --- !u!1 &337536319
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +724,7 @@ GameObject:
   - component: {fileID: 337536322}
   - component: {fileID: 337536321}
   - component: {fileID: 337536320}
+  - component: {fileID: 337536324}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -794,6 +827,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &337536324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337536319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 4
+  punishmentPoints: 0
 --- !u!1 &346131415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1302,7 @@ GameObject:
   - component: {fileID: 527488070}
   - component: {fileID: 527488069}
   - component: {fileID: 527488068}
+  - component: {fileID: 527488072}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -1356,6 +1405,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527488072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527488067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 20
+  punishmentPoints: 0
 --- !u!1 &552659499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1704,7 @@ GameObject:
   - component: {fileID: 604724429}
   - component: {fileID: 604724428}
   - component: {fileID: 604724427}
+  - component: {fileID: 604724431}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -1742,6 +1807,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &604724431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604724426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 1
+  punishmentPoints: 0
 --- !u!1 &666774749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1834,7 @@ GameObject:
   - component: {fileID: 666774752}
   - component: {fileID: 666774751}
   - component: {fileID: 666774750}
+  - component: {fileID: 666774754}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -1856,6 +1937,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &666774754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666774749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 18
+  punishmentPoints: 0
 --- !u!1 &725671612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,6 +1964,7 @@ GameObject:
   - component: {fileID: 725671615}
   - component: {fileID: 725671614}
   - component: {fileID: 725671613}
+  - component: {fileID: 725671617}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -1970,6 +2067,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &725671617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725671612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 3
+  punishmentPoints: 0
 --- !u!1 &729076982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2240,7 @@ GameObject:
   - component: {fileID: 844495712}
   - component: {fileID: 844495711}
   - component: {fileID: 844495710}
+  - component: {fileID: 844495714}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -2230,6 +2343,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &844495714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844495709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 2
+  punishmentPoints: 0
 --- !u!1 &878206327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
   isPlayer: 1
-  deskID: 0
+  deskID: 15
   punishmentPoints: 0
 --- !u!1 &1048047371
 GameObject:
@@ -2936,6 +3064,7 @@ GameObject:
   - component: {fileID: 1179824528}
   - component: {fileID: 1179824527}
   - component: {fileID: 1179824526}
+  - component: {fileID: 1179824530}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -3038,6 +3167,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179824530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179824525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 19
+  punishmentPoints: 0
 --- !u!1 &1183579084
 GameObject:
   m_ObjectHideFlags: 0
@@ -3274,6 +3418,7 @@ GameObject:
   - component: {fileID: 1239515709}
   - component: {fileID: 1239515708}
   - component: {fileID: 1239515707}
+  - component: {fileID: 1239515711}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -3376,6 +3521,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1239515711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239515706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 17
+  punishmentPoints: 0
 --- !u!1 &1268459198
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,6 +3803,7 @@ GameObject:
   - component: {fileID: 1353352588}
   - component: {fileID: 1353352587}
   - component: {fileID: 1353352586}
+  - component: {fileID: 1353352590}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -3745,6 +3906,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1353352590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353352585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 14
+  punishmentPoints: 0
 --- !u!1 &1377012631
 GameObject:
   m_ObjectHideFlags: 0
@@ -3869,6 +4045,7 @@ GameObject:
   - component: {fileID: 1437177016}
   - component: {fileID: 1437177015}
   - component: {fileID: 1437177014}
+  - component: {fileID: 1437177018}
   m_Layer: 6
   m_Name: Alumno
   m_TagString: Untagged
@@ -3971,6 +4148,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212573053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1437177018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437177013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 10
+  punishmentPoints: 0
 --- !u!1 &1509651150
 GameObject:
   m_ObjectHideFlags: 0
