@@ -13,10 +13,10 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private TeacherState currentState = TeacherState.Patrolling;
 
     [Header("Configuración de Patrulla")]
-    // Lista de puntos de ruta (Waypoints) por los que el profesor caminará
+    // Lista de puntos de ruta (Waypoints) por los que el profesor caminará[cite: 3]
     [SerializeField] private Transform[] waypoints;
-    // Tiempo que el profesor se queda quieto al llegar a un punto de ruta antes de ir al siguiente
-    [SerializeField] private float waitTimeAtWaypoint = 2f;
+    // Tiempo, en segundos, que el profesor espera en cada waypoint antes de continuar
+    [SerializeField] private float waitTimeAtWaypoint = 2f; 
     // Índice del punto de ruta actual hacia el que se dirige
     private int currentWaypointIndex = 0;
     // Indicador interno para saber si está esperando en un punto de ruta
@@ -35,7 +35,7 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private LayerMask obstacleMask;
 
     [Header("Indicadores Visuales")]
-    // Objeto 3D o UI (interrogación) que aparece al escuchar un ruido extraño
+    // Objeto 3D o UI (interrogación) que aparece al escuchar un ruido extraño[cite: 15]
     [SerializeField] private GameObject questionMarkIcon;
     // Objeto 3D o UI (exclamación) que aparece al pillar a un alumno[cite: 15]
     [SerializeField] private GameObject exclamationMarkIcon;
@@ -55,7 +55,7 @@ public class TeacherAI : MonoBehaviour
         questionMarkIcon.SetActive(false);
         exclamationMarkIcon.SetActive(false);
 
-        // Envío del profesor al primer punto de ruta
+        // Envío del profesor al primer punto de ruta si existen
         if (waypoints.Length > 0)
         {
             agent.SetDestination(waypoints[0].position);
@@ -96,13 +96,13 @@ public class TeacherAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Rutina de espera al llegar a un punto de ruta.
+    /// Rutina de espera al llegar a un punto de ruta usando el tiempo serializado.
     /// </summary>
     private IEnumerator WaitAtWaypointRoutine()
     {
         isWaiting = true;
         
-        // Aquí se podría activar la animación de escribir en la pizarra si el waypoint es la pizarra[cite: 15]
+        // Espera el tiempo configurado en waitTimeAtWaypoint
         yield return new WaitForSeconds(waitTimeAtWaypoint);
 
         // Avance al siguiente punto de ruta (vuelve al 0 si llega al final)
@@ -179,8 +179,6 @@ public class TeacherAI : MonoBehaviour
 
         questionMarkIcon.SetActive(false);
         exclamationMarkIcon.SetActive(true); // Se enfada al pillarle[cite: 15]
-
-        // Cambio a color colorado y humo (se hará mediante animación/material)[cite: 15]
         
         Debug.Log("¡El profesor ha pillado al alumno " + guiltyStudent.GetDeskID() + "!");
         
