@@ -1,4 +1,7 @@
 ﻿<Solution>
+<<<<<<< HEAD
+  <Project Path="Assembly-CSharp.csproj" />
+=======
   <Project Path="Unity.Timeline.csproj" />
   <Project Path="Unity.InputSystem.csproj" />
   <Project Path="Unity.RenderPipelines.GPUDriven.Runtime.csproj" />
@@ -66,4 +69,5 @@
   <Project Path="Unity.RenderPipelines.Universal.Config.Runtime.csproj" />
   <Project Path="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj" />
   <Project Path="Unity.RenderPipelines.Core.ShaderLibrary.csproj" />
+>>>>>>> 0a03f084a85755433fbf46b7e710104b47c1b493
 </Solution>
