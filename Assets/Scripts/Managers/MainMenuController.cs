@@ -1,0 +1,84 @@
+using UnityEngine;
+using UnityEngine.UI; // Necesario si se referencian componentes de UI directamente (opcional aquí)
+
+public class MainMenuController : MonoBehaviour
+{
+    [Header("Paneles de Interfaz")]
+    // Referencia al panel principal que contiene los botones iniciales
+    [SerializeField] private GameObject mainCanvas;
+    
+    // Referencia al panel del anexo (guía de logros / jugarretas)[cite: 2, 3]
+    [SerializeField] private GameObject annexCanvas;
+    
+    // Referencia al panel de opciones y ajustes del juego
+    [SerializeField] private GameObject settingsCanvas;
+
+    private void Start()
+    {
+        // Se asegura de que al iniciar el juego, solo el menú principal sea visible
+        ShowMainPanelOnly();
+    }
+
+    /// <summary>
+    /// Inicia la partida cargando la escena del aula.
+    /// Invocado por el botón "Jugar".
+    /// </summary>
+    public void PlayGame()
+    {
+        // Validación para evitar errores si falta el mánager de transiciones
+        if (SceneTransitionManager.Instance != null)
+        {
+            SceneTransitionManager.Instance.LoadGameScene();
+        }
+        else
+        {
+            Debug.LogError("No se ha encontrado el SceneTransitionManager en la escena.");
+        }
+    }
+
+    /// <summary>
+    /// Abre el panel del Anexo ocultando el menú principal.
+    /// Invocado por el botón "Anexo de Gamberradas".
+    /// </summary>
+    public void OpenAnnex()
+    {
+        mainCanvas.SetActive(false);
+        annexCanvas.SetActive(true);
+        settingsCanvas.SetActive(false);
+    }
+
+    /// <summary>
+    /// Abre el panel de Ajustes ocultando el menú principal.
+    /// Invocado por el botón "Opciones".
+    /// </summary>
+    public void OpenSettings()
+    {
+        mainCanvas.SetActive(false);
+        annexCanvas.SetActive(false);
+        settingsCanvas.SetActive(true);
+    }
+
+    /// <summary>
+    /// Cierra cualquier submenú y vuelve a mostrar el menú principal.
+    /// Invocado por los botones "Volver" dentro de los paneles de Anexo y Ajustes.
+    /// </summary>
+    public void ShowMainPanelOnly()
+    {
+        mainCanvas.SetActive(true);
+        annexCanvas.SetActive(false);
+        settingsCanvas.SetActive(false);
+    }
+
+    /// <summary>
+    /// Cierra la aplicación completamente.
+    /// Invocado por el botón "Salir".
+    /// </summary>
+    public void QuitGame()
+    {
+        // Mensaje en consola para comprobar que el botón funciona mientras se prueba en el editor de Unity
+        Debug.Log("Saliendo del juego...");
+        
+        // Instrucción que cierra el juego (solo funciona en la versión compilada/Build)
+        Application.Quit();
+    }
+}
