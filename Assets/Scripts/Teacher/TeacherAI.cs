@@ -175,13 +175,22 @@ public class TeacherAI : MonoBehaviour
     public void CatchStudent(StudentIdentity guiltyStudent)
     {
         currentState = TeacherState.Catching;
-        agent.isStopped = true; // Detención del movimiento
-
+        agent.isStopped = true; 
         questionMarkIcon.SetActive(false);
-        exclamationMarkIcon.SetActive(true); // Se enfada al pillarle[cite: 15]
-        
-        Debug.Log("¡El profesor ha pillado al alumno " + guiltyStudent.GetDeskID() + "!");
-        
-        // Aquí se conectará con el script TeacherPunishment.cs para aplicar los puntos.
+        exclamationMarkIcon.SetActive(true); 
+
+        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, 25);
+    }
+
+    /// <summary>
+    /// Devuelve al profesor a su estado normal de patrulla.
+    /// </summary>
+    public void ResumePatrol()
+    {
+        currentState = TeacherState.Patrolling;
+        isWaiting = false;
+        agent.isStopped = false; // Permite que vuelva a caminar
+        questionMarkIcon.SetActive(false);
+        exclamationMarkIcon.SetActive(false);
     }
 }
