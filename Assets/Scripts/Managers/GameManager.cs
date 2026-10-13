@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public event Action<float> OnTimeUpdated;
     // Evento disparado al ganar o perder puntos para actualizar los marcadores
     public event Action<int, int> OnPointsUpdated;
+    // Evento disparado al finalizar la partida: (bool expelled, int laughPoints, int punishmentPoints, int finalScore)
+    public event Action<bool, int, int, int> OnMatchEnded;
 
     private void Awake()
     {
@@ -115,28 +117,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Finaliza la partida, detiene el tiempo y calcula la puntuación final.
+/// <summary>
+    /// Finaliza la partida, congela el tiempo y notifica a la interfaz unificada de puntuación.
     /// </summary>
-    /// <param name="expelled">Verdadero si la partida acaba por expulsión, falso si es por tiempo</param>
-    private void EndMatch(bool expelled)
+    /// <param name="expelled">Verdadero si termina por expulsión, falso si es por tiempo</param>
+    public void EndMatch(bool expelled)
     {
+        if (!isMatchActive) return;
         isMatchActive = false;
 
-        // Cálculo de la puntuación final: diferencia entre risa y enfado[cite: 2]
-        int finalScore = currentLaughPoints - currentPunishmentPoints;
+        // Congelación del tiempo de juego
+        Time.timeScale = 0f;
 
-        if (expelled)
-        {
-            Debug.Log("Partida terminada: Expulsado del aula. Puntuación final: " + finalScore);
-            // Aquí se llamaría a la UI de derrota
-        }
-        else
-        {
-            Debug.Log("Partida terminada: Tiempo agotado. Puntuación final: " + finalScore);
-            // Aquí se llamaría a la UI de victoria/resumen
-        }
+        // Desbloqueo del cursor para la interfaz final
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        // Aquí se conectará en el futuro con LootLockerManager para subir el 'finalScore' al ranking[cite: 2, 9]
+        // Cálculo de la puntuación final
+        int finalScore = GetFinalScore();
+
+        // Notificación al controlador de UI unificado
+        OnMatchEnded?.Invoke(expelled, currentLaughPoints, currentPunishmentPoints, finalScore);
+
+        // Aquí se llamará en el futuro a LootLockerManager para subir 'finalScore'[cite: 2, 9]
+    }
+
+    /// <summary>
+    /// Devuelve el cálculo de la puntuación final.
+    /// </summary>
+    public int GetFinalScore()
+    {
+        return currentLaughPoints - currentPunishmentPoints;
     }
 }
