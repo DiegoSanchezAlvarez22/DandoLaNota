@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class EndMatchUIController : MonoBehaviour
+public class MatchEndUIController : MonoBehaviour
 {
     [Header("Paneles de Interfaz")]
     // Referencia al Canvas/Panel unificado de resultados finales

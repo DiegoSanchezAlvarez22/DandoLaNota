@@ -71,18 +71,43 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Reinicia los valores e inicia una nueva partida.
-    /// Se invoca al cargar la escena del aula desde el menú.
+    /// Reinicia los valores de la partida.
+    /// Se invoca al cargar la escena del aula, pero NO inicia el temporizador todavía.
     /// </summary>
     public void StartNewMatch()
     {
         currentMatchTime = matchDurationSeconds;
         currentLaughPoints = 0;
         currentPunishmentPoints = 0;
-        isMatchActive = true;
+        
+        // La partida no está activa aún
+        isMatchActive = false;
+        
+        // Se congela el tiempo del motor para físicas y animaciones
+        Time.timeScale = 0f;
+
+        // Se desbloquea y muestra el cursor para poder escribir en la UI
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         OnPointsUpdated?.Invoke(currentLaughPoints, currentPunishmentPoints);
-        Debug.Log("Nueva partida iniciada. Nivel de dificultad: " + currentDifficulty);
+        Debug.Log("Nueva partida preparada. Esperando nombre del jugador...");
+    }
+
+    /// <summary>
+    /// Inicia el temporizador de la partida y reanuda el tiempo real.
+    /// Se invoca desde la interfaz cuando el jugador confirma su nombre.
+    /// </summary>
+    public void BeginMatchTimer()
+    {
+        isMatchActive = true;
+        Time.timeScale = 1f;
+
+        // Se bloquea de nuevo el cursor para controlar la cámara en primera persona
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Debug.Log("¡El jugador ha confirmado su nombre. Comienza el tiempo!");
     }
 
     /// <summary>
@@ -140,6 +165,7 @@ public class GameManager : MonoBehaviour
         OnMatchEnded?.Invoke(expelled, currentLaughPoints, currentPunishmentPoints, finalScore);
 
         // Aquí se llamará en el futuro a LootLockerManager para subir 'finalScore'[cite: 2, 9]
+        LootLockerManager.Instance.SubmitScore(finalScore);
     }
 
     /// <summary>
