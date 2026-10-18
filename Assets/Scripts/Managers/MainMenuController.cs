@@ -4,14 +4,17 @@ using UnityEngine.UI; // Necesario si se referencian componentes de UI directame
 public class MainMenuController : MonoBehaviour
 {
     [Header("Paneles de Interfaz")]
-    // Referencia al panel principal que contiene los botones iniciales
+    // Referencia al panel del menú principal
     [SerializeField] private GameObject mainCanvas;
     
-    // Referencia al panel del anexo (guía de logros / jugarretas)[cite: 2, 3]
+    // Referencia al panel del anexo (guía de logros / jugarretas)
     [SerializeField] private GameObject annexCanvas;
     
     // Referencia al panel de opciones y ajustes del juego
     [SerializeField] private GameObject settingsCanvas;
+
+    // Referencia al panel de creditos
+    [SerializeField] private GameObject creditsCanvas;
 
     private void Start()
     {
@@ -59,6 +62,18 @@ public class MainMenuController : MonoBehaviour
     }
 
     /// <summary>
+    /// Abre el panel de Créditos ocultando el menú principal.
+    /// Invocado por el botón "Créditos".
+    /// </summary>
+    public void OpenCredits()
+    {
+        mainCanvas.SetActive(false);
+        annexCanvas.SetActive(false);
+        settingsCanvas.SetActive(false);
+        creditsCanvas.SetActive(true);
+    }
+
+    /// <summary>
     /// Cierra cualquier submenú y vuelve a mostrar el menú principal.
     /// Invocado por los botones "Volver" dentro de los paneles de Anexo y Ajustes.
     /// </summary>
@@ -67,6 +82,7 @@ public class MainMenuController : MonoBehaviour
         mainCanvas.SetActive(true);
         annexCanvas.SetActive(false);
         settingsCanvas.SetActive(false);
+        creditsCanvas.SetActive(false);
     }
 
     /// <summary>
