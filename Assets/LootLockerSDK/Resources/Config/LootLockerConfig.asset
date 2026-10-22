@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LootLockerConfig
   m_EditorClassIdentifier: lootlocker.lootlockersdk.runtime::LootLocker.LootLockerConfig
   apiKey: dev_7fde7e8193dd4e3585ff52d68f557022
-  adminToken: 62a83be79860de4d746c9f6fdc747ee31cfb46ce93d0c770a1d5b524a4fd3800
+  adminToken: 
   domainKey: qsatjk6y
   game_version: 1.0.0.0
   sdk_version: 8.2.0
