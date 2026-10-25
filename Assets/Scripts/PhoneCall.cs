@@ -5,6 +5,8 @@ public class PhoneCall : MonoBehaviour
 {
     [SerializeField] InputActionAsset controls;
     [SerializeField] float callDuration = 3f;
+    public bool IsCalling => calling;
+    public void CancelCall() { calling = false; }
     [SerializeField] AudioSource classAudio;
     [SerializeField] AudioClip ringClip;
     [SerializeField] Transform phone;

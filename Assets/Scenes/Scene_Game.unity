@@ -5077,6 +5077,7 @@ GameObject:
   - component: {fileID: 1130098180}
   - component: {fileID: 1130098185}
   - component: {fileID: 1130098184}
+  - component: {fileID: 1130098186}
   m_Layer: 0
   m_Name: TeacherProvisional
   m_TagString: Untagged
@@ -5234,6 +5235,20 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1130098186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130098179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0ced9fde9aa51488d0950e69dfba69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeacherPunishment
+  expulsionThreshold: 100
+  expulsionAnimationDelay: 3
 --- !u!1 &1161668502
 GameObject:
   m_ObjectHideFlags: 0
