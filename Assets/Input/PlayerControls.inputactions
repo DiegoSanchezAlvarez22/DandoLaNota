@@ -55,6 +55,7 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+<<<<<<< HEAD
                 },
                 {
 <<<<<<< HEAD
@@ -91,6 +92,8 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+=======
+>>>>>>> aeab19f8c84175c47126df69c020b5b8180911e8
                 }
             ],
             "bindings": [
@@ -192,6 +195,7 @@
                     "action": "Call",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< HEAD
                 },
                 {
                     "name": "",
@@ -233,6 +237,8 @@
 >>>>>>> 4f354273e5aa88b84f75f5465036881563a6b3d0
                     "isComposite": false,
                     "isPartOfComposite": false
+=======
+>>>>>>> aeab19f8c84175c47126df69c020b5b8180911e8
                 }
             ]
         }
