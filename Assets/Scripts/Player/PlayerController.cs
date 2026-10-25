@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public bool IsSeated => isSeated;
+   
     [Header("Configuración de Movimiento")]
     // Velocidad de desplazamiento por el aula
     [SerializeField] private float moveSpeed = 5f;

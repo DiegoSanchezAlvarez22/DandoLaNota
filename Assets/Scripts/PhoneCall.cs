@@ -34,6 +34,7 @@ public class PhoneCall : MonoBehaviour
             {
                 calling = true;
                 timer = callDuration;
+                timer = callDuration;
             }
             return;
         }

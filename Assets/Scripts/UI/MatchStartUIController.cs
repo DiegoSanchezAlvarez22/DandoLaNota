@@ -41,6 +41,8 @@ public class MatchStartUIController : MonoBehaviour
 
             // Ocultar panel
             if (startPanel != null) startPanel.SetActive(false);
+            if (startPanel != null) startPanel.SetActive(false);
+            if (startPanel != null) startPanel.SetActive(false);
 
             // Reanudar tiempo
             if (GameManager.Instance != null)
