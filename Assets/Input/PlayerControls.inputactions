@@ -57,9 +57,35 @@
                     "priority": 0
                 },
                 {
+<<<<<<< HEAD
                     "name": "Throw",
                     "type": "Button",
                     "id": "9f3667a5-75fb-41e7-8fb6-60f045d40f22",
+=======
+                    "name": "GenerarBola",
+                    "type": "Button",
+                    "id": "58ef0150-9235-4f2c-a553-be7c1bec3b4c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "ApuntarBola",
+                    "type": "Button",
+                    "id": "50fbf9d9-600c-4b89-9dc1-ff227acf3ae1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "LanzarBola",
+                    "type": "Button",
+                    "id": "4b9d639a-c92d-4a67-accb-b04d44a23f43",
+>>>>>>> 4f354273e5aa88b84f75f5465036881563a6b3d0
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -169,12 +195,42 @@
                 },
                 {
                     "name": "",
+<<<<<<< HEAD
                     "id": "11757e97-0bca-44f9-8bda-2735eb88b53c",
+=======
+                    "id": "310139de-1424-4c7d-addc-c18b01cc8ab7",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GenerarBola",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1da034e-fd9e-4eef-8263-ec21b9c881e8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ApuntarBola",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0793b836-bc83-4fd5-aaa9-f6d4c338cb70",
+>>>>>>> 4f354273e5aa88b84f75f5465036881563a6b3d0
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+<<<<<<< HEAD
                     "action": "Throw",
+=======
+                    "action": "LanzarBola",
+>>>>>>> 4f354273e5aa88b84f75f5465036881563a6b3d0
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
