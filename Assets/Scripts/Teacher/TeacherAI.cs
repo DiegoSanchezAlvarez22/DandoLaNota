@@ -178,7 +178,11 @@ public class TeacherAI : MonoBehaviour
         questionMarkIcon.SetActive(false);
         exclamationMarkIcon.SetActive(true);
 
-        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, 25);
+        int penalty = 25;
+        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, penalty);
+
+        if (guiltyStudent.IsPlayer() && PenaltyPopup.Instance != null)
+            PenaltyPopup.Instance.Show(penalty);
     }
 
     /// <summary>

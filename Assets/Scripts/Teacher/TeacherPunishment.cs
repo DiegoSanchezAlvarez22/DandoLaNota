@@ -9,13 +9,19 @@ public class TeacherPunishment : MonoBehaviour
     [Header("Configuración de Expulsión")]
     // Límite de puntos para que el profesor expulse al alumno
     [SerializeField] private int expulsionThreshold = 100;
-    
+
     // Tiempo en segundos que el profesor se queda mirando/regañando al alumno frente a su pupitre
     [SerializeField] private float expulsionAnimationDelay = 3f;
 
     // Componentes internos
     private NavMeshAgent agent;
     private TeacherAI teacherAI;
+
+    private IEnumerator ResumeAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        teacherAI.ResumePatrol();
+    }
 
     private void Awake()
     {
@@ -29,6 +35,8 @@ public class TeacherPunishment : MonoBehaviour
     /// </summary>
     /// <param name="student">La identidad del estudiante pillado</param>
     /// <param name="pointsAdded">La cantidad de puntos de castigo por la gamberrada</param>
+    /// 
+
     public void PunishStudent(StudentIdentity student, int pointsAdded)
     {
         student.AddPunishmentPoints(pointsAdded);
@@ -46,7 +54,7 @@ public class TeacherPunishment : MonoBehaviour
         }
         else
         {
-            teacherAI.ResumePatrol();
+            StartCoroutine(ResumeAfterDelay(1.5f));
         }
     }
 
