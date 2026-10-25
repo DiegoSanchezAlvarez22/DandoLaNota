@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(fileName = "NuevaGamberrada", menuName = "DandoLaNota/NuevaGamberrada")]
 public class GamberradaData : ScriptableObject
@@ -14,6 +15,6 @@ public class GamberradaData : ScriptableObject
     [Tooltip("Icono representativo de la gamberrada para la UI")]
     public Sprite icon;
     
-    //[Tooltip("Clip de vídeo demostrativo que se reproducirá en el anexo")]
-    //public VideoClip demoVideo;
+    [Tooltip("Clip de vídeo demostrativo que se reproducirá en el anexo")]
+    public VideoClip demoVideo;
 }
