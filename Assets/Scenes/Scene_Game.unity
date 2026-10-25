@@ -4837,7 +4837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaperThrow
   controls: {fileID: -944628639613478452, guid: d35ebed8359b83b4e832699f56d8b018, type: 3}
-  paperBallPrefab: {fileID: 4722099200550997842, guid: 1d945d160b4622a4cb9b19699c4f52b2, type: 3}
+  paperBallPrefab: {fileID: 1194368631630782169, guid: 1d945d160b4622a4cb9b19699c4f52b2, type: 3}
   cameraTransform: {fileID: 1632516551}
   throwForce: 1
   cooldown: 0.5

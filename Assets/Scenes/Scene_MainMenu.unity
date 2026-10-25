@@ -4639,15 +4639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   currentDifficulty: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
   matchDurationSeconds: 200
-=======
-  matchDurationSeconds: 20
->>>>>>> 4f354273e5aa88b84f75f5465036881563a6b3d0
-=======
-  matchDurationSeconds: 5
->>>>>>> aeab19f8c84175c47126df69c020b5b8180911e8
   maxPunishmentPoints: 100
   currentMatchTime: 200
   currentLaughPoints: 0
