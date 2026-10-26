@@ -16,7 +16,7 @@ public class TeacherAI : MonoBehaviour
     // Lista de puntos de ruta (Waypoints) por los que el profesor caminará[cite: 3]
     [SerializeField] private Transform[] waypoints;
     // Tiempo, en segundos, que el profesor espera en cada waypoint antes de continuar
-    [SerializeField] private float waitTimeAtWaypoint = 2f; 
+    [SerializeField] private float waitTimeAtWaypoint = 2f;
     // Índice del punto de ruta actual hacia el que se dirige
     private int currentWaypointIndex = 0;
     // Indicador interno para saber si está esperando en un punto de ruta
@@ -101,14 +101,14 @@ public class TeacherAI : MonoBehaviour
     private IEnumerator WaitAtWaypointRoutine()
     {
         isWaiting = true;
-        
+
         // Espera el tiempo configurado en waitTimeAtWaypoint
         yield return new WaitForSeconds(waitTimeAtWaypoint);
 
         // Avance al siguiente punto de ruta (vuelve al 0 si llega al final)
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         agent.SetDestination(waypoints[currentWaypointIndex].position);
-        
+
         isWaiting = false;
     }
 
@@ -133,14 +133,13 @@ public class TeacherAI : MonoBehaviour
                 // Lanzamiento de un rayo (Raycast) para comprobar que no hay paredes entre los ojos y el alumno
                 if (!Physics.Raycast(eyesTransform.position, directionToStudent, distanceToStudent, obstacleMask))
                 {
-                    // ¡Visión directa establecida! Aquí se comprobaría si el alumno está haciendo una gamberrada.
-                    // Para la base, simularemos que lo detecta.
-                    
-                    // StudentIdentity detectedStudent = studentTransform.GetComponent<StudentIdentity>();
-                    // if (detectedStudent != null && alumno_haciendo_gamberrada)
-                    // {
-                    //      CatchStudent(detectedStudent);
-                    // }
+                    PhoneCall call = studentTransform.GetComponentInParent<PhoneCall>();
+                    if (call != null && call.IsCalling)
+                    {
+                        call.CancelCall();
+                        CatchStudent(studentTransform.GetComponentInParent<StudentIdentity>());
+                        return;
+                    }
                 }
             }
         }
@@ -156,7 +155,7 @@ public class TeacherAI : MonoBehaviour
         if (currentState == TeacherState.Catching) return; // Si ya está regañando, ignora el sonido
 
         currentState = TeacherState.Suspicious;
-        
+
         // Activación de la exclamación/interrogación animada y mirada de búsqueda[cite: 15]
         questionMarkIcon.SetActive(true);
         exclamationMarkIcon.SetActive(false);
@@ -175,11 +174,15 @@ public class TeacherAI : MonoBehaviour
     public void CatchStudent(StudentIdentity guiltyStudent)
     {
         currentState = TeacherState.Catching;
-        agent.isStopped = true; 
+        agent.isStopped = true;
         questionMarkIcon.SetActive(false);
-        exclamationMarkIcon.SetActive(true); 
+        exclamationMarkIcon.SetActive(true);
 
-        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, 25);
+        int penalty = 25;
+        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, penalty);
+
+        if (guiltyStudent.IsPlayer() && PenaltyPopup.Instance != null)
+            PenaltyPopup.Instance.Show(penalty);
     }
 
     /// <summary>

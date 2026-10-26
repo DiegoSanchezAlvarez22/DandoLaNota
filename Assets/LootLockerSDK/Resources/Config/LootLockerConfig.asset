@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182cd195a28310e479cddf7ff82822f8, type: 3}
   m_Name: LootLockerConfig
   m_EditorClassIdentifier: lootlocker.lootlockersdk.runtime::LootLocker.LootLockerConfig
-  apiKey: 
+  apiKey: dev_7fde7e8193dd4e3585ff52d68f557022
   adminToken: 
-  domainKey: 
+  domainKey: qsatjk6y
   game_version: 1.0.0.0
-  sdk_version: 
+  sdk_version: 8.2.0
   logLevel: 2
   prettifyJson: 1
   obfuscateLogs: 1
@@ -30,9 +30,9 @@ MonoBehaviour:
   multiUserSessionMode: 2
   enableEditorAdminExtension: 1
   url: https://api.lootlocker.com/v1
-  adminUrl: https://api.lootlocker.com/admin
-  playerUrl: https://api.lootlocker.com/player
-  userUrl: https://api.lootlocker.com/game
-  webSocketBaseUrl: wss://api.lootlocker.com/game
-  baseUrl: https://api.lootlocker.com
+  adminUrl: https://qsatjk6y.api.lootlocker.com/admin
+  playerUrl: https://qsatjk6y.api.lootlocker.com/player
+  userUrl: https://qsatjk6y.api.lootlocker.com/game
+  webSocketBaseUrl: wss://qsatjk6y.api.lootlocker.com/game
+  baseUrl: https://qsatjk6y.api.lootlocker.com
   clientSideRequestTimeOut: 180
