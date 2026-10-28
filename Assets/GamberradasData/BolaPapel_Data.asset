@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcefabfe9800c94da16998e9fc0b4fb, type: 3}
-  m_Name: silla_lanzar
+  m_Name: BolaPapel_Data
   m_EditorClassIdentifier: Assembly-CSharp::GamberradaData
-  id: silla_lanzar
-  prankName: Lanzamiento de silla
+  id: throwable_papelBall
+  prankName: Lanzar Bola Papel
+  minigameType: 0
+  dificultad: 0
+  tiempoEjecucionBase: 3
+  penalizacionPorFallo: 1
+  tiempoPenalizacion: 2
+  sonidoPenalizacion: {fileID: 0}
   icon: {fileID: 0}
+  demoVideo: {fileID: 0}

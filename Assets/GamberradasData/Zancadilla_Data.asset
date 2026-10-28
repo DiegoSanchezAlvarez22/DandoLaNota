@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcefabfe9800c94da16998e9fc0b4fb, type: 3}
-  m_Name: movil_jugar
+  m_Name: Zancadilla_Data
   m_EditorClassIdentifier: Assembly-CSharp::GamberradaData
-  id: movil_jugar
-  prankName: Jugar en el movil
+  id: environment_pushTeacher
+  prankName: Zancadilla Profesor
+  minigameType: 1
+  dificultad: 2
+  tiempoEjecucionBase: 2
+  penalizacionPorFallo: 1
+  tiempoPenalizacion: 2
+  sonidoPenalizacion: {fileID: 0}
   icon: {fileID: 0}
+  demoVideo: {fileID: 0}

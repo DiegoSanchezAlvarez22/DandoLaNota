@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcefabfe9800c94da16998e9fc0b4fb, type: 3}
-  m_Name: "movil_llamar_compa\xF1ero"
+  m_Name: LlamarMovil_Data
   m_EditorClassIdentifier: Assembly-CSharp::GamberradaData
-  id: "movil_llamar_compa\xF1ero"
-  prankName: Llamar a un compi
+  id: phone_call
+  prankName: Llamar Movil
+  minigameType: 2
+  dificultad: 1
+  tiempoEjecucionBase: 5
+  penalizacionPorFallo: 1
+  tiempoPenalizacion: 2
+  sonidoPenalizacion: {fileID: 0}
   icon: {fileID: 0}
+  demoVideo: {fileID: 0}

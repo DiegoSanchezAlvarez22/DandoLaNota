@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GamberradaData
   id: bola_papel_lanzar
   prankName: Bolazo de papel
-  minigameType: 2
+  minigameType: 0
+  dificultad: 2
+  tiempoEjecucionBase: 2
+  penalizacionPorFallo: 1
+  tiempoPenalizacion: 4
+  sonidoPenalizacion: {fileID: 8300000, guid: 8d6b689bd91493a42b55cca086aa9e91, type: 3}
   icon: {fileID: 0}
   demoVideo: {fileID: 0}
