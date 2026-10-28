@@ -874,6 +874,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AchievementManager
   allPranks:
   - {fileID: 11400000, guid: e25906569561fed448aae1382d853053, type: 2}
+  - {fileID: 11400000, guid: 59c076f05aa24364bb387bcc98ef2f9f, type: 2}
+  - {fileID: 11400000, guid: 755b8cca42011ab4db1d009aa2e6e143, type: 2}
   - {fileID: 11400000, guid: dd23197053817a44db940d25dece6848, type: 2}
   - {fileID: 11400000, guid: dea67ca68da036b43a1373c7f80289d7, type: 2}
   - {fileID: 11400000, guid: 49565735ba25d8343b6c299f8464c304, type: 2}

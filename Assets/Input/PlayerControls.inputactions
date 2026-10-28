@@ -47,6 +47,26 @@
                     "priority": 0
                 },
                 {
+                    "name": "Drop",
+                    "type": "Button",
+                    "id": "7cc1ad3b-5252-4e7e-8ada-bfc2c4f0d3df",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Phone",
+                    "type": "Button",
+                    "id": "2a5c11d3-d282-4520-9a79-efc74d129215",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
                     "name": "StandUp",
                     "type": "Button",
                     "id": "2b411343-5092-432b-a2cc-e94be5ce30a1",
@@ -70,16 +90,6 @@
                     "name": "Throw",
                     "type": "Button",
                     "id": "9f3667a5-75fb-41e7-8fb6-60f045d40f22",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                },
-                {
-                    "name": "Drop",
-                    "type": "Button",
-                    "id": "7cc1ad3b-5252-4e7e-8ada-bfc2c4f0d3df",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -217,6 +227,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Drop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fb56c531-a318-47bc-99da-9a93e6a653a7",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Phone",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

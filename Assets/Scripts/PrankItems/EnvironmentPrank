@@ -1,0 +1,112 @@
+using UnityEngine;
+using UnityEngine.Events;
+using System.Collections;
+
+public class EnvironmentPrank : MonoBehaviour, IInteractable
+{
+    [Header("Datos de la Gamberrada")]
+    [SerializeField] private GamberradaData prankData;
+    [SerializeField] private int pointsAwarded = 500;
+    
+    [Header("Efectos Visuales al Completar")]
+    [Tooltip("Objeto que aparecerá (Ej: El dibujo de tiza en la pizarra)")]
+    [SerializeField] private GameObject objetoAActivar;
+    [Tooltip("Objeto que desaparecerá (Ej: La luz de la pantalla del PC)")]
+    [SerializeField] private GameObject objetoADesactivar;
+
+    [Header("Eventos Extra (Opcional)")]
+    [Tooltip("Puedes conectar aquí otros scripts, como la animación de caída del profesor")]
+    public UnityEvent onPrankCompleted;
+
+    private AudioSource audioSource;
+    private bool yaCompletada = false; // Evita que se pueda apagar el PC 20 veces
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+    }
+
+    public string GetInteractPrompt()
+    {
+        // Si ya se ha hecho, no muestra texto y no deja interactuar
+        if (yaCompletada) return ""; 
+        
+        string nombre = prankData != null ? prankData.prankName : "Acción";
+        return $"[E] {nombre}";
+    }
+
+    public void OnInteract(PlayerInteraction player)
+    {
+        if (yaCompletada) return;
+
+        if (QTEManager.Instance != null && prankData != null)
+        {
+            // Pasamos al jugador a través del callback para poder congelarlo luego
+            QTEManager.Instance.StartMinigame(prankData.minigameType, (exito) => OnMinigameResult(exito, player));
+        }
+    }
+
+    private void OnMinigameResult(bool qteExito, PlayerInteraction player)
+    {
+        StartCoroutine(EjecutarTension(qteExito, player));
+    }
+
+    private IEnumerator EjecutarTension(bool qteExito, PlayerInteraction player)
+    {
+        // 1. Congelamos al jugador
+        player.SetFrozen(true);
+        float tiempoTotal = prankData.tiempoEjecucionBase;
+
+        // 2. Penalizaciones si se falla el QTE
+        if (!qteExito)
+        {
+            if (prankData.penalizacionPorFallo == TipoPenalizacion.AumentarTiempo)
+            {
+                tiempoTotal += prankData.tiempoPenalizacion;
+            }
+            else if (prankData.penalizacionPorFallo == TipoPenalizacion.HacerRuido)
+            {
+                if (prankData.sonidoPenalizacion != null)
+                {
+                    audioSource.PlayOneShot(prankData.sonidoPenalizacion);
+                }
+            }
+        }
+
+        // 3. Bucle de tensión temporal
+        while (tiempoTotal > 0)
+        {
+            player.UpdateActionTimer(tiempoTotal);
+            tiempoTotal -= Time.deltaTime;
+            yield return null;
+        }
+
+        // 4. Limpieza y descongelación
+        player.UpdateActionTimer(0);
+        player.SetFrozen(false);
+
+        // 5. Consecuencias
+        CompletarGamberrada();
+    }
+
+    private void CompletarGamberrada()
+    {
+        yaCompletada = true;
+
+        if (AchievementManager.Instance != null && prankData != null)
+            AchievementManager.Instance.UnlockPrank(prankData.id);
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.AddLaughPoints(pointsAwarded);
+
+        // Activamos o desactivamos los objetos de la escena que hayamos configurado
+        if (objetoAActivar != null) objetoAActivar.SetActive(true);
+        if (objetoADesactivar != null) objetoADesactivar.SetActive(false);
+
+        // Ejecutamos cualquier evento extra conectado en el inspector
+        onPrankCompleted?.Invoke();
+
+        Debug.Log("Gamberrada de entorno completada.");
+    }
+}

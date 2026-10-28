@@ -1,12 +1,9 @@
 using UnityEngine;
 using UnityEngine.Video;
 
-public enum MinigameType
-{
-    SpamBoton,
-    BarraRitmo,
-    SecuenciaTeclas
-}
+public enum MinigameType { SpamBoton, BarraRitmo, SecuenciaTeclas }
+public enum Dificultad { Facil, Medio, Dificil }
+public enum TipoPenalizacion { AumentarTiempo, HacerRuido }
 
 [CreateAssetMenu(fileName = "NuevaGamberrada", menuName = "DandoLaNota/GamberradaData")]
 public class GamberradaData : ScriptableObject
@@ -15,8 +12,18 @@ public class GamberradaData : ScriptableObject
     public string id;
     public string prankName;
 
-    [Header("Mecánica")]
+    [Header("Mecánica del Minijuego")]
     public MinigameType minigameType;
+    public Dificultad dificultad;
+
+    [Header("Tiempos y Penalización")]
+    [Tooltip("Tiempo en segundos que el jugador debe estar quieto para completar la acción")]
+    public float tiempoEjecucionBase = 2f;
+    public TipoPenalizacion penalizacionPorFallo;
+    [Tooltip("Segundos extra que tardarás si fallas (Solo para AumentarTiempo)")]
+    public float tiempoPenalizacion = 2f;
+    [Tooltip("Ruido que se reproducirá al fallar (Solo para HacerRuido)")]
+    public AudioClip sonidoPenalizacion;
 
     [Header("Contenido Visual")]
     public Sprite icon;
