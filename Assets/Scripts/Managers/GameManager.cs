@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Determina si el temporizador y el juego están activos
     [SerializeField] private bool isMatchActive = false;
 
-    [Header("Eventos de Interfaz")]
+    // [Header("Eventos de Interfaz")]
     // Evento cada segundo para actualizar el reloj visual del aula
     public event Action<float> OnTimeUpdated;
     // Evento al ganar o perder puntos para actualizar los marcadores
