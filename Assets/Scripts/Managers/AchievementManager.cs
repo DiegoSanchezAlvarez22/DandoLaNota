@@ -7,7 +7,8 @@ public class AchievementManager : MonoBehaviour
     public static AchievementManager Instance { get; private set; }
 
     [Header("Base de Datos de Gamberradas")]
-    [SerializeField] private List<GamberradaData> allPranks = new List<GamberradaData>(); // añadir los scriptableObjects
+    // Lista de todas los ScriptableObjects de Gamberradas
+    [SerializeField] private List<GamberradaData> allPranks = new List<GamberradaData>();
 
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class AchievementManager : MonoBehaviour
     /// Marca una gamberrada como descubierta y la guarda localmente.
     /// Invocado por los objetos interactuables al terminar un minijuego.
     /// </summary>
-    /// <param name="prankId">El ID único de la gamberrada</param>
+    /// <param name="prankId">ID único de la gamberrada</param>
     public void UnlockPrank(string prankId)
     {
         // Solo se guarda y notifica si no estaba desbloqueada antes
@@ -34,7 +35,7 @@ public class AchievementManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Prank_" + prankId, 1);
             PlayerPrefs.Save();
-            
+
             Debug.Log("¡Nueva gamberrada descubierta y guardada!: " + prankId);
         }
     }
@@ -58,7 +59,7 @@ public class AchievementManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Herramienta de desarrollo: Borra todo el progreso de las gamberradas descubiertas.
+    /// Borra todo el progreso de las gamberradas descubiertas.
     /// </summary>
     [ContextMenu("Borrar Progreso Local")]
     public void ResetAllPranks()

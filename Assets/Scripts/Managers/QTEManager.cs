@@ -7,7 +7,7 @@ public class QTEManager : MonoBehaviour
 
     [Header("Referencias de UI")]
     [SerializeField] private GameObject canvasQTE;
-    
+
     [Header("Controladores de Minijuegos")]
     [SerializeField] private QTESpam qteSpam;
     [SerializeField] private QTERitmo qteRitmo;
@@ -26,23 +26,26 @@ public class QTEManager : MonoBehaviour
         if (canvasQTE != null) canvasQTE.SetActive(false);
     }
 
+    /// <summary>
+    /// Inicia un minijuego de QTE según el tipo especificado
+    /// </summary>
     public void StartMinigame(MinigameType type, Action<bool> callback)
     {
         currentCallback = callback;
-        
+
         if (canvasQTE != null) canvasQTE.SetActive(true);
-        
-        // Congelamos el mundo 3D y liberamos el cursor
+
+        // Congelar el mundo 3D y liberar el cursor
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Ocultamos todos los paneles por seguridad
+        // Ocultar todos los paneles por seguridad
         qteSpam.gameObject.SetActive(false);
         qteRitmo.gameObject.SetActive(false);
         qteSecuencia.gameObject.SetActive(false);
 
-        // Activamos e iniciamos solo el correspondiente
+        // Activa e inicia solo el correspondiente
         switch (type)
         {
             case MinigameType.SpamBoton:
@@ -60,15 +63,18 @@ public class QTEManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Finaliza el minijuego actual y devuelve el resultado al callback proporcionado.
+    /// </summary>
     private void TerminarMinijuego(bool success)
     {
         qteSpam.gameObject.SetActive(false);
         qteRitmo.gameObject.SetActive(false);
         qteSecuencia.gameObject.SetActive(false);
-        
+
         if (canvasQTE != null) canvasQTE.SetActive(false);
 
-        // Reanudamos el mundo 3D y bloqueamos el cursor
+        // Reanudar el mundo 3D y bloquear el cursor
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

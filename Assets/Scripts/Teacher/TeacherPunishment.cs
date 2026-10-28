@@ -63,7 +63,7 @@ public class TeacherPunishment : MonoBehaviour
     /// </summary>
     private IEnumerator ExpulsionRoutine(StudentIdentity student)
     {
-        // 1. Desplazamiento del profesor hacia la posición exacta del pupitre del alumno
+        // Desplazamiento del profesor hacia la posición exacta del pupitre del alumno
         agent.isStopped = false;
         agent.SetDestination(student.transform.position);
 
@@ -75,13 +75,13 @@ public class TeacherPunishment : MonoBehaviour
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         // TODO: A FUTURO - Sustituir este tiempo de espera por la activación de la animación de expulsión //
-        // donde el profesor agarra al alumno y lo saca físicamente del aula[cite: 15].                    //
+        // donde el profesor agarra al alumno y lo saca físicamente del aula                               //
         /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        // 2. Pausa serializable (el profesor se queda parado mirando al alumno)
+        // Pausa serializable (el profesor se queda parado mirando al alumno)
         yield return new WaitForSeconds(expulsionAnimationDelay);
 
-        // 3. Resolución del evento
+        // Resolución del evento
         if (student.IsPlayer())
         {
             // Delegación directa al GameManager para finalizar la partida de forma centralizada

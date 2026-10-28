@@ -10,7 +10,7 @@ public class LeaderboardUI : MonoBehaviour
 
     private void OnEnable()
     {
-        // En lugar de llamar directamente, iniciamos una corrutina que espera de forma segura
+        // Esperar a que el LootLockerManager esté listo antes de refrescar la tabla
         StartCoroutine(WaitAndRefresh());
     }
 
@@ -22,13 +22,16 @@ public class LeaderboardUI : MonoBehaviour
         // Pausa la ejecución aquí hasta que la instancia deje de ser nula
         while (LootLockerManager.Instance == null)
         {
-            yield return null; 
+            yield return null;
         }
 
         // Una vez asegurado que existe, pide los datos
         RefreshLeaderboard();
     }
 
+    /// <summary>
+    /// Refresca la tabla de clasificación descargando los datos más recientes y actualizando la UI
+    /// </summary>
     public void RefreshLeaderboard()
     {
         if (rowsParent == null) return;
@@ -50,23 +53,21 @@ public class LeaderboardUI : MonoBehaviour
                 if (rowUI == null) continue;
 
                 string playerName = "Anónimo";
-                
-                // 1º: Buscamos el nombre incrustado (Partidas nuevas)
+
+                // Buscamos el nombre del jugador en el orden de prioridad
                 if (!string.IsNullOrEmpty(scores[i].metadata))
                 {
                     playerName = scores[i].metadata;
                 }
-                // 2º: Buscamos el nombre de la cuenta general
                 else if (scores[i].player != null && !string.IsNullOrEmpty(scores[i].player.name))
                 {
                     playerName = scores[i].player.name;
                 }
-                // 3º: Respaldo para las partidas viejas que hiciste antes de este sistema
                 else if (!string.IsNullOrEmpty(scores[i].member_id))
                 {
                     playerName = "Jugador " + scores[i].member_id;
                 }
-                
+
                 // Asignamos la información al prefab
                 rowUI.Setup(scores[i].rank.ToString(), playerName, scores[i].score.ToString());
             }

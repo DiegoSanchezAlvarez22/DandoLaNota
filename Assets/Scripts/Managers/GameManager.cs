@@ -4,35 +4,35 @@ using System;
 public class GameManager : MonoBehaviour
 {
     [Header("Instancia Global")]
-    // Instancia estática única para acceder al GameManager desde cualquier otro script (Patrón Singleton)
+    // Instancia estática única para acceder al GameManager desde cualquier otro script (Singleton)
     public static GameManager Instance { get; private set; }
 
     [Header("Configuración Global (Persistente)")]
-    // Nivel de dificultad actual seleccionado en el menú (1: Fácil, 2: Medio, 3: Difícil, 4: Extremo)[cite: 2, 3]
+    // Nivel de dificultad actual seleccionado en el menú (1: Fácil, 2: Medio, 3: Difícil, 4: Extremo)
     [SerializeField] private int currentDifficulty = 1;
 
     [Header("Configuración de Partida")]
-    // Duración total de la partida en segundos (ej. 480 segundos = 8 minutos)[cite: 2]
+    // Duración total de la partida en segundos
     [SerializeField] private float matchDurationSeconds = 480f;
-    // Límite máximo de puntos de enfado antes de ser expulsado del aula[cite: 2]
+    // Límite máximo de puntos de enfado antes de ser expulsado
     [SerializeField] private int maxPunishmentPoints = 100;
 
     [Header("Estado de la Partida Actual")]
     // Tiempo restante de la partida en curso
     [SerializeField] private float currentMatchTime;
-    // Puntos de risa acumulados mediante gamberradas durante la partida actual[cite: 2]
+    // Puntos de risa acumulados
     [SerializeField] private int currentLaughPoints = 0;
-    // Puntos de castigo acumulados por ser pillado por el profesor[cite: 2]
+    // Puntos de castigo acumulados
     [SerializeField] private int currentPunishmentPoints = 0;
-    // Indicador booleano que determina si el temporizador y el juego están activos
+    // Determina si el temporizador y el juego están activos
     [SerializeField] private bool isMatchActive = false;
 
-    //[Header("Eventos de Interfaz")]
-    // Evento disparado cada segundo para actualizar el reloj visual del aula
+    [Header("Eventos de Interfaz")]
+    // Evento cada segundo para actualizar el reloj visual del aula
     public event Action<float> OnTimeUpdated;
-    // Evento disparado al ganar o perder puntos para actualizar los marcadores
+    // Evento al ganar o perder puntos para actualizar los marcadores
     public event Action<int, int> OnPointsUpdated;
-    // Evento disparado al finalizar la partida: (bool expelled, int laughPoints, int punishmentPoints, int finalScore)
+    // Evento al finalizar la partida: (bool expelled, int laughPoints, int punishmentPoints, int finalScore)
     public event Action<bool, int, int, int> OnMatchEnded;
 
     private void Awake()
@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            // Evita que este objeto se destruya al cambiar de la escena del menú a la del juego
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -57,7 +56,7 @@ public class GameManager : MonoBehaviour
         if (isMatchActive)
         {
             currentMatchTime -= Time.deltaTime;
-            
+
             // Notificación a la interfaz gráfica sobre el tiempo restante
             OnTimeUpdated?.Invoke(currentMatchTime);
 
@@ -72,21 +71,19 @@ public class GameManager : MonoBehaviour
 
     /// <summary>
     /// Reinicia los valores de la partida.
-    /// Se invoca al cargar la escena del aula, pero NO inicia el temporizador todavía.
+    /// Invocado al cargar la escena del aula, pero NO inicia el temporizador todavía.
     /// </summary>
     public void StartNewMatch()
     {
         currentMatchTime = matchDurationSeconds;
         currentLaughPoints = 0;
         currentPunishmentPoints = 0;
-        
+
         // La partida no está activa aún
         isMatchActive = false;
-        
-        // Se congela el tiempo del motor para físicas y animaciones
         Time.timeScale = 0f;
 
-        // Se desbloquea y muestra el cursor para poder escribir en la UI
+        // Desbloquea y muestra el cursor para poder escribir en la UI
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -96,14 +93,14 @@ public class GameManager : MonoBehaviour
 
     /// <summary>
     /// Inicia el temporizador de la partida y reanuda el tiempo real.
-    /// Se invoca desde la interfaz cuando el jugador confirma su nombre.
+    /// Invocado desde la interfaz cuando el jugador confirma su nombre.
     /// </summary>
     public void BeginMatchTimer()
     {
         isMatchActive = true;
         Time.timeScale = 1f;
 
-        // Se bloquea de nuevo el cursor para controlar la cámara en primera persona
+        // Bloquea de nuevo el cursor para controlar la cámara en primera persona
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -112,7 +109,7 @@ public class GameManager : MonoBehaviour
 
     /// <summary>
     /// Añade puntos de risa al marcador global de la partida.
-    /// Invocado por los objetos interactuables tras realizar una gamberrada con éxito[cite: 2].
+    /// Invocado por los objetos interactuables tras realizar una gamberrada con éxito
     /// </summary>
     /// <param name="points">Cantidad de puntos a sumar</param>
     public void AddLaughPoints(int points)
@@ -135,14 +132,14 @@ public class GameManager : MonoBehaviour
         currentPunishmentPoints += points;
         OnPointsUpdated?.Invoke(currentLaughPoints, currentPunishmentPoints);
 
-        // Comprobación de límite de expulsión[cite: 2]
+        // Comprobación de límite de expulsión
         if (currentPunishmentPoints >= maxPunishmentPoints)
         {
             EndMatch(true);
         }
     }
 
-/// <summary>
+    /// <summary>
     /// Finaliza la partida, congela el tiempo y notifica a la interfaz unificada de puntuación.
     /// </summary>
     /// <param name="expelled">Verdadero si termina por expulsión, falso si es por tiempo</param>
@@ -150,8 +147,6 @@ public class GameManager : MonoBehaviour
     {
         if (!isMatchActive) return;
         isMatchActive = false;
-
-        // Congelación del tiempo de juego
         Time.timeScale = 0f;
 
         // Desbloqueo del cursor para la interfaz final
@@ -164,7 +159,7 @@ public class GameManager : MonoBehaviour
         // Notificación al controlador de UI unificado
         OnMatchEnded?.Invoke(expelled, currentLaughPoints, currentPunishmentPoints, finalScore);
 
-        // Aquí se llamará en el futuro a LootLockerManager para subir 'finalScore'[cite: 2, 9]
+        // Llama a LootLockerManager para subir 'finalScore'
         LootLockerManager.Instance.SubmitScore(finalScore);
     }
 

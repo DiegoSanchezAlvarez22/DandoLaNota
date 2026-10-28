@@ -37,16 +37,25 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Carga la escena del juego con una transición de fundido a negro y luego a transparente
+    /// </summary>
     public void LoadGameScene()
     {
         StartCoroutine(TransitionToSceneRoutine(gameSceneName, true));
     }
 
+    /// <summary>
+    /// Carga la escena del menú principal con una transición de fundido a negro y luego a transparente
+    /// </summary>
     public void LoadMainMenuScene()
     {
         StartCoroutine(TransitionToSceneRoutine(mainMenuSceneName, false));
     }
 
+    /// <summary>
+    /// Corrutina que maneja la transición a una escena específica
+    /// </summary>
     private IEnumerator TransitionToSceneRoutine(string sceneName, bool isStartingMatch)
     {
         transitionCanvasGroup.blocksRaycasts = true;

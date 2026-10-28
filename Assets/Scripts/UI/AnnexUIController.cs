@@ -17,7 +17,7 @@ public class AnnexUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Genera la cuadrícula dinámica basándose en la base de datos de AchievementManager.
+    /// Genera la cuadrícula dinámica basándose en la base de datos de AchievementManager
     /// </summary>
     private void PopulateGrid()
     {
@@ -50,7 +50,7 @@ public class AnnexUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Función puente llamada por una tarjeta para abrir el vídeo.
+    /// Función puente llamada por una tarjeta para abrir el vídeo
     /// </summary>
     public void OpenVideoPopup(GamberradaData data)
     {

@@ -4,29 +4,29 @@ using System;
 public class StudentIdentity : MonoBehaviour
 {
     [Header("ID Alumno")]
-    // Determina si este componente pertenece al jugador humano o a un NPC controlado por la IA
+    // Determina si este componente pertenece al jugador humano o a un NPC
     [SerializeField] private bool isPlayer = false;
     
     // Número identificador del pupitre asignado a este alumno
     [SerializeField] private int deskID = 0;
 
     [Header("Registro de Disciplina")]
-    // Acumulador de los puntos de castigo recibidos tras ser pillado por el profesor[cite: 2]
+    // Acumulador de los puntos de castigo recibidos tras ser pillado por el profesor
     [SerializeField] private int punishmentPoints = 0;
 
-    // Evento que se dispara cada vez que cambian los puntos de castigo, útil para actualizar la UI del jugador
+    // Evento que se dispara cada vez que cambian los puntos de castigo
     public event Action<int> OnPunishmentPointsChanged;
 
     /// <summary>
     /// Añade puntos de castigo al expediente del alumno.
-    /// Invocado por el script del profesor (TeacherPunishment) cuando detecta una gamberrada.
+    /// Invocado por el script TeacherPunishment cuando detecta una gamberrada.
     /// </summary>
     /// <param name="points">Cantidad de puntos de enfado/castigo a sumar</param>
     public void AddPunishmentPoints(int points)
     {
         punishmentPoints += points;
         
-        // Notificación a los componentes suscritos (como el GameHUDController) sobre el nuevo valor
+        // Notificación a los componentes suscritos sobre el nuevo valor
         OnPunishmentPointsChanged?.Invoke(punishmentPoints);
 
         // Registro en consola para facilitar la depuración en el editor
@@ -54,7 +54,7 @@ public class StudentIdentity : MonoBehaviour
 
     /// <summary>
     /// Devuelve el identificador numérico del pupitre asignado.
-    /// Útil para mecánicas como la selección aleatoria de asiento al inicio del nivel[cite: 5].
+    /// Útil para mecánicas como la selección aleatoria de asiento al inicio del nivel
     /// </summary>
     /// <returns>Número del pupitre</returns>
     public int GetDeskID()

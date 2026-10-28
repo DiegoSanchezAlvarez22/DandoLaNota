@@ -6,11 +6,11 @@ public class LeaderboardRowUI : MonoBehaviour
     [Header("Textos de la Fila")]
     // Texto que muestra la posición en el ranking (1º, 2º, 3º...)
     [SerializeField] private TMP_Text rankText;
-    
-    // Texto que muestra el nombre del jugador[cite: 9]
+
+    // Texto que muestra el nombre del jugador
     [SerializeField] private TMP_Text nameText;
-    
-    // Texto que muestra la puntuación obtenida[cite: 9]
+
+    // Texto que muestra la puntuación obtenida
     [SerializeField] private TMP_Text scoreText;
 
     /// <summary>

@@ -4,7 +4,7 @@ using TMPro;
 public class MatchEndUIController : MonoBehaviour
 {
     [Header("Paneles de Interfaz")]
-    // Referencia al Canvas/Panel unificado de resultados finales
+    // Referencia al Canvas unificado de resultados finales
     [SerializeField] private GameObject endMatchCanvas;
 
     [Header("Textos de Puntuación")]
@@ -45,7 +45,7 @@ public class MatchEndUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Activa el panel de resultados y rellena la información con los datos de la partida.
+    /// Activa el panel de resultados y rellena la información con los datos de la partida
     /// </summary>
     private void DisplayEndMatchScreen(bool expelled, int laughPoints, int punishmentPoints, int finalScore)
     {
@@ -67,8 +67,8 @@ public class MatchEndUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Restaura la velocidad del tiempo y regresa al Menú Principal.
-    /// Invocado por el botón "Volver al Menú" en la pantalla de resultados.
+    /// Restaura la velocidad del tiempo y regresa al Menú Principal
+    /// Invocado por el botón "Volver al Menú" en la pantalla de resultados
     /// </summary>
     public void ReturnToMainMenu()
     {

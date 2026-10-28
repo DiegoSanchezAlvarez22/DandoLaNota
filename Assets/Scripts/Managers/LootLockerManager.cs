@@ -1,15 +1,17 @@
 using UnityEngine;
 using LootLocker.Requests;
 using System;
-using System.Collections; // Necesario para la pausa (Corrutinas)
+using System.Collections;
 
 public class LootLockerManager : MonoBehaviour
 {
     [Header("Instancia Global")]
+    // Instancia estática única para acceder al LootLockerManager desde cualquier otro script (Singleton)
     public static LootLockerManager Instance { get; private set; }
 
     [Header("Configuración de Leaderboard")]
-    [SerializeField] private string leaderboardKey = "top_gamberros"; // Asegúrate de que sea tu ID
+    // Importante que el ID coincida
+    [SerializeField] private string leaderboardKey = "top_gamberros";
     [SerializeField] private bool isConnected = false;
 
     private void Awake()
@@ -30,6 +32,9 @@ public class LootLockerManager : MonoBehaviour
         StartGuestSession("espectador_menu", null);
     }
 
+    /// <summary>
+    /// Inicia una sesión de invitado en LootLocker para poder interactuar con la tabla de clasificación
+    /// </summary>
     public void StartGuestSession(string identifier, Action<bool> onComplete)
     {
         LootLockerSDKManager.StartGuestSession(identifier, (response) =>
@@ -40,11 +45,11 @@ public class LootLockerManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Registra la sesión para el jugador actual limpiando espacios y con una pausa de seguridad.
+    /// Registra la sesión para el jugador actual limpiando espacios y con una pausa de seguridad
     /// </summary>
     public void RegisterPlayerForMatch(string playerName, Action<bool> onComplete = null)
     {
-        // Limpiamos espacios al principio y al final por si el jugador pulsó la barra espaciadora sin querer
+        // Limpia el añadido de espacios innecesarios
         string cleanName = playerName.Trim();
 
         LootLockerSDKManager.StartGuestSession(cleanName, (response) =>
@@ -52,7 +57,6 @@ public class LootLockerManager : MonoBehaviour
             if (response.success)
             {
                 isConnected = true;
-                // En lugar de cambiar el nombre al instante, esperamos medio segundo
                 StartCoroutine(ApplyNameWithDelay(cleanName, onComplete));
             }
             else
@@ -65,12 +69,11 @@ public class LootLockerManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Corrutina que da margen al servidor antes de aplicar el nombre público.
+    /// Corrutina que da margen al servidor antes de aplicar el nombre público
     /// </summary>
     private IEnumerator ApplyNameWithDelay(string name, Action<bool> onComplete)
     {
-        // LA CLAVE ESTÁ AQUÍ: Usamos WaitForSecondsRealtime en lugar de WaitForSeconds
-        // para que funcione aunque Time.timeScale sea 0.
+        // WaitForSecondsRealtime() en lugar de WaitForSeconds() para que funcione aunque Time.timeScale sea 0
         yield return new WaitForSecondsRealtime(0.5f);
 
         LootLockerSDKManager.SetPlayerName(name, (nameResponse) =>
@@ -79,11 +82,13 @@ public class LootLockerManager : MonoBehaviour
             {
                 Debug.LogWarning("El servidor rechazó el nombre: " + nameResponse.errorData.message);
             }
-            // Dejamos que el jugador juegue independientemente de si el servidor aceptó el nombre o no
-            onComplete?.Invoke(true); 
+            onComplete?.Invoke(true);
         });
     }
 
+    /// <summary>
+    /// Sube la puntuación final del jugador a la tabla de clasificación
+    /// </summary>
     public void SubmitScore(int finalScore)
     {
         if (!isConnected) return;
@@ -97,11 +102,14 @@ public class LootLockerManager : MonoBehaviour
         });
     }
 
+    /// <summary>
+    /// Descarga las puntuaciones más altas de la tabla de clasificación y las devuelve mediante un callback
+    /// </summary>
     public void FetchTopHighScores(Action<LootLockerLeaderboardMember[]> onScoresRetrieved)
     {
         if (!isConnected)
         {
-            StartGuestSession("espectador_menu", (success) => 
+            StartGuestSession("espectador_menu", (success) =>
             {
                 if (success) ExecuteFetch(onScoresRetrieved);
             });
@@ -112,6 +120,9 @@ public class LootLockerManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ejecuta la descarga de puntuaciones más altas y llama al callback con los resultados
+    /// </summary>
     private void ExecuteFetch(Action<LootLockerLeaderboardMember[]> onScoresRetrieved)
     {
         LootLockerSDKManager.GetScoreList(leaderboardKey, 10, 0, (response) =>

@@ -23,8 +23,8 @@ public class MatchStartUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Guarda el nombre, lo envía al servidor y da comienzo a la partida.
-    /// Invocado por el botón "Empezar Clase" en la interfaz.
+    /// Guarda el nombre, lo envía al servidor y da comienzo a la partida
+    /// Invocado por el botón "Empezar Clase" en la interfaz
     /// </summary>
     public void ConfirmNameAndStart()
     {

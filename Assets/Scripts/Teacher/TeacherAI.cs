@@ -13,7 +13,7 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private TeacherState currentState = TeacherState.Patrolling;
 
     [Header("Configuración de Patrulla")]
-    // Lista de puntos de ruta (Waypoints) por los que el profesor caminará[cite: 3]
+    // Lista de puntos de ruta (Waypoints) por los que el profesor caminará
     [SerializeField] private Transform[] waypoints;
     // Tiempo, en segundos, que el profesor espera en cada waypoint antes de continuar
     [SerializeField] private float waitTimeAtWaypoint = 2f;
@@ -27,7 +27,7 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private float viewRadius = 10f;
     // Ángulo de apertura del cono de visión (en grados)
     [SerializeField] private float viewAngle = 90f;
-    // Punto de origen desde donde salen los rayos visuales (normalmente la cabeza)
+    // Punto de origen desde donde salen los rayos visuales
     [SerializeField] private Transform eyesTransform;
     // Capa que identifica a los alumnos
     [SerializeField] private LayerMask studentMask;
@@ -35,9 +35,9 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private LayerMask obstacleMask;
 
     [Header("Indicadores Visuales")]
-    // Objeto 3D o UI (interrogación) que aparece al escuchar un ruido extraño[cite: 15]
+    // Objeto 3D o UI (interrogación) que aparece al escuchar un ruido extraño
     [SerializeField] private GameObject questionMarkIcon;
-    // Objeto 3D o UI (exclamación) que aparece al pillar a un alumno[cite: 15]
+    // Objeto 3D o UI (exclamación) que aparece al pillar a un alumno
     [SerializeField] private GameObject exclamationMarkIcon;
 
     // Componente interno para la navegación automática
@@ -82,13 +82,13 @@ public class TeacherAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Gestiona el movimiento entre los diferentes puntos de ruta.
+    /// Gestiona el movimiento entre los diferentes puntos de ruta
     /// </summary>
     private void HandlePatrol()
     {
         if (waypoints.Length == 0 || isWaiting) return;
 
-        // Comprobación de si ha llegado a su destino actual (con un pequeño margen de error)
+        // Comprobación de si ha llegado a su destino actual
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
             StartCoroutine(WaitAtWaypointRoutine());
@@ -96,13 +96,11 @@ public class TeacherAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Rutina de espera al llegar a un punto de ruta usando el tiempo serializado.
+    /// Rutina de espera al llegar a un punto de ruta usando el tiempo serializado
     /// </summary>
     private IEnumerator WaitAtWaypointRoutine()
     {
         isWaiting = true;
-
-        // Espera el tiempo configurado en waitTimeAtWaypoint
         yield return new WaitForSeconds(waitTimeAtWaypoint);
 
         // Avance al siguiente punto de ruta (vuelve al 0 si llega al final)
@@ -113,7 +111,7 @@ public class TeacherAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Escanea el área en busca de alumnos realizando gamberradas dentro del cono de visión.
+    /// Escanea el área en busca de alumnos realizando gamberradas dentro del cono de visión
     /// </summary>
     private void CheckVision()
     {
@@ -130,7 +128,7 @@ public class TeacherAI : MonoBehaviour
             {
                 float distanceToStudent = Vector3.Distance(eyesTransform.position, studentTransform.position);
 
-                // Lanzamiento de un rayo (Raycast) para comprobar que no hay paredes entre los ojos y el alumno
+                // Lanzamiento de un rayo para comprobar que no hay paredes entre los ojos y el alumno
                 if (!Physics.Raycast(eyesTransform.position, directionToStudent, distanceToStudent, obstacleMask))
                 {
                     PhoneCall call = studentTransform.GetComponentInParent<PhoneCall>();
@@ -146,25 +144,24 @@ public class TeacherAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Método público invocado por el gestor de sonido cuando se detecta un ruido.
-    /// Envía al profesor a investigar la posición de origen[cite: 11, 13, 15].
+    /// Método público invocado por el gestor de sonido cuando se detecta un ruido
+    /// Envía al profesor a investigar la posición de origen
     /// </summary>
     /// <param name="noisePosition">Vector3 con las coordenadas del sonido</param>
     public void HearNoise(Vector3 noisePosition)
     {
-        if (currentState == TeacherState.Catching) return; // Si ya está regañando, ignora el sonido
+        // Si ya esta regañando ignora el sonido
+        if (currentState == TeacherState.Catching) return;
 
         currentState = TeacherState.Suspicious;
 
-        // Activación de la exclamación/interrogación animada y mirada de búsqueda[cite: 15]
+        // Activación de la exclamación/interrogación animada y mirada de búsqueda
         questionMarkIcon.SetActive(true);
         exclamationMarkIcon.SetActive(false);
 
         // Envío del agente a la posición del ruido
         agent.SetDestination(noisePosition);
         isWaiting = false;
-
-        // Opcional: Rotar la cabeza hacia el ruido[cite: 15]
     }
 
     /// <summary>

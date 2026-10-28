@@ -13,13 +13,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = -9.8f;
 
     [Header("Configuración de Cámara")]
-    // Sensibilidad del ratón (suele ser menor en el nuevo Input System)
+    // Sensibilidad del ratón
     [SerializeField] private float mouseSensitivity = 20f;
     // Referencia a la cámara principal emparentada al jugador
     [SerializeField] private Transform cameraTransform;
 
     [Header("Estado del Jugador")]
-    // Determina si el jugador se encuentra actualmente sentado en el pupitre[cite: 14]
+    // Determina si el jugador se encuentra actualmente sentado en el pupitre
     [SerializeField] private bool isSeated = false;
     // Altura normal de la cámara cuando el jugador está de pie
     [SerializeField] private float standingHeight = 0.5f;
@@ -27,9 +27,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float seatedHeight = 0.3f;
 
     [Header("Controles (New Input System)")]
-    // Referencia a la acción de movimiento (WASD)
+    // Referencia a la acción de movimiento
     [SerializeField] private InputActionReference moveAction;
-    // Referencia a la acción de mirar (Ratón)
+    // Referencia a la acción de mirar
     [SerializeField] private InputActionReference lookAction;
     // Referencia a la acción de levantarse
     [SerializeField] private InputActionReference standAction;
@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
+    /// <summary>
+    /// Se llama cuando el script se habilita
+    /// </summary>
     private void OnEnable()
     {
         // Activación de las acciones de control al encender el script
@@ -55,6 +58,9 @@ public class PlayerController : MonoBehaviour
         standAction.action.Enable();
     }
 
+    /// <summary>
+    /// Se llama cuando el script se deshabilita
+    /// </summary>
     private void OnDisable()
     {
         // Desactivación de las acciones de control al apagar el script
@@ -90,6 +96,9 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
     }
 
+    /// <summary>
+    /// Maneja la mirada del jugador basada en la entrada del ratón
+    /// </summary>
     private void HandleMouseLook()
     {
         // Lectura del vector 2D generado por el movimiento del ratón
@@ -109,6 +118,9 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
     }
 
+    /// <summary>
+    /// Maneja el movimiento del jugador basado en la entrada del teclado
+    /// </summary>
     private void HandleMovement()
     {
         // Lectura del vector 2D generado por las teclas WASD

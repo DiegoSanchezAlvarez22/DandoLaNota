@@ -6,11 +6,11 @@ public class MainMenuController : MonoBehaviour
     [Header("Paneles de Interfaz")]
     // Referencia al panel del menú principal
     [SerializeField] private GameObject mainCanvas;
-    
-    // Referencia al panel del anexo (guía de logros / jugarretas)
+
+    // Referencia al panel del anexo
     [SerializeField] private GameObject annexCanvas;
-    
-    // Referencia al panel de opciones y ajustes del juego
+
+    // Referencia al panel de opciones
     [SerializeField] private GameObject settingsCanvas;
 
     // Referencia al panel de creditos
@@ -18,7 +18,7 @@ public class MainMenuController : MonoBehaviour
 
     private void Start()
     {
-        // Se asegura de que al iniciar el juego, solo el menú principal sea visible
+        // Solo mostrar el panel principal al iniciar el juego
         ShowMainPanelOnly();
     }
 
@@ -91,10 +91,9 @@ public class MainMenuController : MonoBehaviour
     /// </summary>
     public void QuitGame()
     {
-        // Mensaje en consola para comprobar que el botón funciona mientras se prueba en el editor de Unity
         Debug.Log("Saliendo del juego...");
-        
-        // Instrucción que cierra el juego (solo funciona en la versión compilada/Build)
+
+        // Instrucción que cierra el juego (solo funciona en la Build)
         Application.Quit();
     }
 }
