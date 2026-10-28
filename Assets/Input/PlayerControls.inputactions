@@ -27,9 +27,9 @@
                     "priority": 0
                 },
                 {
-                    "name": "StandUp",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "2b411343-5092-432b-a2cc-e94be5ce30a1",
+                    "id": "2da226ac-f65e-43d1-b617-8afecf56ab82",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -37,9 +37,19 @@
                     "priority": 0
                 },
                 {
-                    "name": "Pause",
+                    "name": "Interact",
                     "type": "Button",
-                    "id": "2da226ac-f65e-43d1-b617-8afecf56ab82",
+                    "id": "09a47545-6e75-4843-807a-092153aead68",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "StandUp",
+                    "type": "Button",
+                    "id": "2b411343-5092-432b-a2cc-e94be5ce30a1",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -60,6 +70,16 @@
                     "name": "Throw",
                     "type": "Button",
                     "id": "9f3667a5-75fb-41e7-8fb6-60f045d40f22",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Drop",
+                    "type": "Button",
+                    "id": "7cc1ad3b-5252-4e7e-8ada-bfc2c4f0d3df",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -175,6 +195,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72072b22-fb2c-4af7-8069-906b15aec98e",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "303cb2cc-495c-4b5c-a396-873bacac4660",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
