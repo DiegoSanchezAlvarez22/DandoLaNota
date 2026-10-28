@@ -3,7 +3,32 @@ guid: 8716840f9de2ad9479469b989234f6d1
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GomaDeBorrar.001
+    second: {fileID: 2100000, guid: f79c01384d89bea4596f81df4eb5f36b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LapizColor
+    second: {fileID: 2100000, guid: c0cf40f6181ade340a5bb3fcfdfe651d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LapizNegroColor
+    second: {fileID: 2100000, guid: 11ba866cc0d474e4f855d06ac00626bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: a7aaacbf096bac14c9aa5b9ba978a422, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PapeleraColor
+    second: {fileID: 2100000, guid: 1a9c7e364fe8895488491eaa7b0e2d9f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

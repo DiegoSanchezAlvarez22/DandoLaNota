@@ -3,7 +3,17 @@ guid: 1835cadc11ca14849a52ec73d71af2c3
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PataSillaColor
+    second: {fileID: 2100000, guid: 5b5b1f02787f2ad419292e6fbb2f8fdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SillaColor
+    second: {fileID: 2100000, guid: 40955134806c1a240a4fa370fdc85396, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,12 @@ guid: 40d5f46832ec7c94895b43d283deb7d1
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MesaColor
+    second: {fileID: 2100000, guid: cb313aaca3f96cd42b25db6918c681e9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
