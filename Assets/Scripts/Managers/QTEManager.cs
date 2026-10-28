@@ -1,0 +1,78 @@
+using UnityEngine;
+using System;
+
+public class QTEManager : MonoBehaviour
+{
+    public static QTEManager Instance { get; private set; }
+
+    [Header("Referencias de UI")]
+    [SerializeField] private GameObject canvasQTE;
+    
+    [Header("Controladores de Minijuegos")]
+    [SerializeField] private QTESpam qteSpam;
+    [SerializeField] private QTERitmo qteRitmo;
+    [SerializeField] private QTESecuencia qteSecuencia;
+
+    private Action<bool> currentCallback;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        if (canvasQTE != null) canvasQTE.SetActive(false);
+    }
+
+    public void StartMinigame(MinigameType type, Action<bool> callback)
+    {
+        currentCallback = callback;
+        
+        if (canvasQTE != null) canvasQTE.SetActive(true);
+        
+        // Congelamos el mundo 3D y liberamos el cursor
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Ocultamos todos los paneles por seguridad
+        qteSpam.gameObject.SetActive(false);
+        qteRitmo.gameObject.SetActive(false);
+        qteSecuencia.gameObject.SetActive(false);
+
+        // Activamos e iniciamos solo el correspondiente
+        switch (type)
+        {
+            case MinigameType.SpamBoton:
+                qteSpam.gameObject.SetActive(true);
+                qteSpam.Iniciar(TerminarMinijuego);
+                break;
+            case MinigameType.BarraRitmo:
+                qteRitmo.gameObject.SetActive(true);
+                qteRitmo.Iniciar(TerminarMinijuego);
+                break;
+            case MinigameType.SecuenciaTeclas:
+                qteSecuencia.gameObject.SetActive(true);
+                qteSecuencia.Iniciar(TerminarMinijuego);
+                break;
+        }
+    }
+
+    private void TerminarMinijuego(bool success)
+    {
+        qteSpam.gameObject.SetActive(false);
+        qteRitmo.gameObject.SetActive(false);
+        qteSecuencia.gameObject.SetActive(false);
+        
+        if (canvasQTE != null) canvasQTE.SetActive(false);
+
+        // Reanudamos el mundo 3D y bloqueamos el cursor
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        currentCallback?.Invoke(success);
+    }
+}
