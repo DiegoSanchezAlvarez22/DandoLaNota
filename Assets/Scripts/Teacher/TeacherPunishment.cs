@@ -7,10 +7,11 @@ using UnityEngine.AI;
 public class TeacherPunishment : MonoBehaviour
 {
     [Header("Configuración de Expulsión")]
-    // Límite de puntos para expulsar
     [SerializeField] private int expulsionThreshold = 100;
-    // Tiempo extra de suspense si te expulsa
     [SerializeField] private float expulsionAnimationDelay = 3f;
+
+    [Header("Animaciones")]
+    [SerializeField] private Animator animator;
 
     private NavMeshAgent agent;
     private TeacherAI teacherAI;
@@ -19,11 +20,11 @@ public class TeacherPunishment : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         teacherAI = GetComponent<TeacherAI>();
+        if (animator == null) animator = GetComponentInChildren<Animator>();
     }
 
     public void PunishStudent(StudentIdentity student, int pointsAdded)
     {
-        // Sumamos los puntos al momento
         student.AddPunishmentPoints(pointsAdded);
 
         if (student.IsPlayer() && GameManager.Instance != null)
@@ -31,34 +32,39 @@ public class TeacherPunishment : MonoBehaviour
             GameManager.Instance.AddPunishmentPoints(pointsAdded);
         }
 
-        // Iniciamos la rutina para que el profesor camine hacia el culpable
         StartCoroutine(ScoldRoutine(student));
     }
 
     private IEnumerator ScoldRoutine(StudentIdentity student)
     {
-        // Reactivamos el movimiento del agente y le decimos que vaya a la posición exacta del alumno
+        // El profesor camina hacia ti
         agent.isStopped = false;
         agent.SetDestination(student.transform.position);
+        if (animator != null) animator.SetBool("IsWalking", true);
 
-        // Esperamos hasta que el profesor llegue a tu lado físicamente
+        // Espera a llegar físicamente
         while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
         {
             yield return null;
         }
 
-        // Obligamos al profesor a girarse para mirarte a la cara
+        // Se detiene frente a ti y activa la animación de regañar
+        agent.isStopped = true;
+        if (animator != null) 
+        {
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsScolding", true);
+        }
+
         Vector3 lookPosition = new Vector3(student.transform.position.x, transform.position.y, student.transform.position.z);
         transform.LookAt(lookPosition);
 
-        // Comprobamos si superas el límite de expulsión
         if (student.GetPunishmentPoints() >= expulsionThreshold)
         {
-            // Drama extra si te expulsa[cite: 2]
             yield return new WaitForSeconds(expulsionAnimationDelay);
+            
             if (student.IsPlayer())
             {
-                // Game Over: activa el panel de fin de partida
                 if (GameManager.Instance != null) GameManager.Instance.EndMatch(true);
             }
             else
@@ -69,8 +75,10 @@ public class TeacherPunishment : MonoBehaviour
         }
         else
         {
-            // Te mira fijamente exactamente 1.5 segundos y se va
+            // Ejecuta la animación de enfado exactamente 1.5 segundos
             yield return new WaitForSeconds(1.5f);
+            
+            // La función ResumePatrol desactivará el estado de bronca internamente
             teacherAI.ResumePatrol();
         }
     }

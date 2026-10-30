@@ -5,66 +5,54 @@ using System.Collections;
 [RequireComponent(typeof(NavMeshAgent))]
 public class TeacherAI : MonoBehaviour
 {
-    // Definición de los posibles estados mentales del profesor
     public enum TeacherState { Patrolling, Suspicious, Catching }
 
     [Header("Estado Actual")]
-    // Estado en el que se encuentra el profesor en este momento
     [SerializeField] private TeacherState currentState = TeacherState.Patrolling;
 
+    [Header("Animaciones")]
+    // Referencia al componente Animator del profesor
+    [SerializeField] private Animator animator; 
+
     [Header("Configuración de Patrulla")]
-    // Lista de puntos de ruta (Waypoints) por los que el profesor caminará
     [SerializeField] private Transform[] waypoints;
-    // Tiempo, en segundos, que el profesor espera en cada waypoint antes de continuar
     [SerializeField] private float waitTimeAtWaypoint = 2f;
-    // Índice del punto de ruta actual hacia el que se dirige
     private int currentWaypointIndex = 0;
-    // Indicador interno para saber si está esperando en un punto de ruta
     private bool isWaiting = false;
 
     [Header("Configuración de Visión")]
-    // Distancia máxima a la que el profesor puede ver
     [SerializeField] private float viewRadius = 10f;
-    // Ángulo de apertura del cono de visión (en grados)
     [SerializeField] private float viewAngle = 90f;
-    // Punto de origen desde donde salen los rayos visuales
     [SerializeField] private Transform eyesTransform;
-    // Capa que identifica a los alumnos
-    [SerializeField] private LayerMask studentMask;
-    // Capa que identifica las paredes o pupitres que bloquean la visión
-    [SerializeField] private LayerMask obstacleMask;
+    [SerializeField] private LayerMask obstacleMask; // Solo muros, asegúrate de que el jugador NO está en esta capa
 
     [Header("Indicadores Visuales")]
-    // Objeto 3D o UI (interrogación) que aparece al escuchar un ruido extraño
     [SerializeField] private GameObject questionMarkIcon;
-    // Objeto 3D o UI (exclamación) que aparece al pillar a un alumno
     [SerializeField] private GameObject exclamationMarkIcon;
 
-    // Componente interno para la navegación automática
     private NavMeshAgent agent;
 
     private void Awake()
     {
-        // Inicialización del componente NavMeshAgent
         agent = GetComponent<NavMeshAgent>();
+        if (animator == null) animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
-        // Ocultación de los iconos de alerta al iniciar
         questionMarkIcon.SetActive(false);
         exclamationMarkIcon.SetActive(false);
 
-        // Envío del profesor al primer punto de ruta si existen
         if (waypoints.Length > 0)
         {
             agent.SetDestination(waypoints[0].position);
+            if (animator != null) animator.SetBool("IsWalking", true);
+            Debug.Log("[Profesor] Iniciando patrulla.");
         }
     }
 
     private void Update()
     {
-        // Máquina de estados: el comportamiento cambia según el estado actual
         switch (currentState)
         {
             case TeacherState.Patrolling:
@@ -73,124 +61,129 @@ public class TeacherAI : MonoBehaviour
                 break;
             case TeacherState.Suspicious:
                 CheckVision();
-                // Si llega al origen del ruido y no ve nada, volverá a patrullar tras un tiempo (se implementará con una corrutina)
+                if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    Debug.Log("[Profesor] Falsa alarma, vuelvo a patrullar.");
+                    ResumePatrol();
+                }
                 break;
             case TeacherState.Catching:
-                // El profesor ha pillado a alguien; detiene su movimiento para regañar
                 break;
         }
     }
 
-    /// <summary>
-    /// Gestiona el movimiento entre los diferentes puntos de ruta
-    /// </summary>
     private void HandlePatrol()
     {
         if (waypoints.Length == 0 || isWaiting) return;
 
-        // Comprobación de si ha llegado a su destino actual
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
             StartCoroutine(WaitAtWaypointRoutine());
         }
     }
 
-    /// <summary>
-    /// Rutina de espera al llegar a un punto de ruta usando el tiempo serializado
-    /// </summary>
     private IEnumerator WaitAtWaypointRoutine()
     {
         isWaiting = true;
+        
+        // Pasa a animación Idle (parado)
+        if (animator != null) animator.SetBool("IsWalking", false); 
+        Debug.Log($"[Profesor] Esperando {waitTimeAtWaypoint}s en el waypoint.");
+        
         yield return new WaitForSeconds(waitTimeAtWaypoint);
 
-        // Avance al siguiente punto de ruta (vuelve al 0 si llega al final)
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         agent.SetDestination(waypoints[currentWaypointIndex].position);
-
+        
+        // Vuelve a animación de andar
+        if (animator != null) animator.SetBool("IsWalking", true); 
         isWaiting = false;
     }
 
-    /// <summary>
-    /// Escanea el área en busca de alumnos realizando gamberradas dentro del cono de visión
-    /// </summary>
     private void CheckVision()
     {
-        // Detección de todos los alumnos dentro del radio máximo
-        Collider[] studentsInRadius = Physics.OverlapSphere(eyesTransform.position, viewRadius, studentMask);
+        // Detecta todo en su radio, sin importar la Layer
+        Collider[] allColliders = Physics.OverlapSphere(eyesTransform.position, viewRadius); 
 
-        for (int i = 0; i < studentsInRadius.Length; i++)
+        for (int i = 0; i < allColliders.Length; i++)
         {
-            Transform studentTransform = studentsInRadius[i].transform;
-            Vector3 directionToStudent = (studentTransform.position - eyesTransform.position).normalized;
+            Transform targetTransform = allColliders[i].transform;
+            
+            PlayerInteraction player = targetTransform.GetComponentInParent<PlayerInteraction>();
+            if (player == null) player = targetTransform.GetComponentInChildren<PlayerInteraction>();
 
-            // Comprobación de si el alumno está dentro del ángulo de visión frontal
-            if (Vector3.Angle(eyesTransform.forward, directionToStudent) < viewAngle / 2f)
+            if (player != null)
             {
-                float distanceToStudent = Vector3.Distance(eyesTransform.position, studentTransform.position);
+                Vector3 directionToTarget = (targetTransform.position - eyesTransform.position).normalized;
+                float angle = Vector3.Angle(eyesTransform.forward, directionToTarget);
+                float distance = Vector3.Distance(eyesTransform.position, targetTransform.position);
 
-                // Lanzamiento de un rayo para comprobar que no hay paredes entre los ojos y el alumno
-                if (!Physics.Raycast(eyesTransform.position, directionToStudent, distanceToStudent, obstacleMask))
+                if (angle < viewAngle / 2f)
                 {
-                    PhoneCall call = studentTransform.GetComponentInParent<PhoneCall>();
-                    if (call != null && call.IsCalling)
+                    if (!Physics.Raycast(eyesTransform.position, directionToTarget, distance, obstacleMask))
                     {
-                        call.CancelCall();
-                        CatchStudent(studentTransform.GetComponentInParent<StudentIdentity>());
-                        return;
+                        Debug.Log($"[Visión] Te veo directamente. IsFrozen: {player.IsFrozen}");
+                        if (player.IsFrozen)
+                        {
+                            Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista.");
+                            player.ClearHand();
+                            player.SetFrozen(false);
+                            
+                            StudentIdentity identity = player.GetComponentInParent<StudentIdentity>();
+                            if (identity != null) CatchStudent(identity);
+                            return; 
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[Visión] Hay una pared/obstáculo entre nosotros.");
                     }
                 }
+                break; // Solo comprobamos al jugador una vez por frame
             }
         }
     }
 
-    /// <summary>
-    /// Método público invocado por el gestor de sonido cuando se detecta un ruido
-    /// Envía al profesor a investigar la posición de origen
-    /// </summary>
-    /// <param name="noisePosition">Vector3 con las coordenadas del sonido</param>
     public void HearNoise(Vector3 noisePosition)
     {
-        // Si ya esta regañando ignora el sonido
         if (currentState == TeacherState.Catching) return;
-
+        
         currentState = TeacherState.Suspicious;
-
-        // Activación de la exclamación/interrogación animada y mirada de búsqueda
         questionMarkIcon.SetActive(true);
         exclamationMarkIcon.SetActive(false);
-
-        // Envío del agente a la posición del ruido
+        
         agent.SetDestination(noisePosition);
+        if (animator != null) animator.SetBool("IsWalking", true);
         isWaiting = false;
     }
 
-    /// <summary>
-    /// Método para procesar cuando se pilla a un alumno con las manos en la masa.
-    /// </summary>
-    /// <param name="guiltyStudent">Componente StudentIdentity del culpable</param>
     public void CatchStudent(StudentIdentity guiltyStudent)
     {
         currentState = TeacherState.Catching;
         agent.isStopped = true;
+        
         questionMarkIcon.SetActive(false);
         exclamationMarkIcon.SetActive(true);
 
-        int penalty = 25;
-        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, penalty);
-
-        if (guiltyStudent.IsPlayer() && PenaltyPopup.Instance != null)
-            PenaltyPopup.Instance.Show(penalty);
+        // Llamamos al castigo y le pasamos el control al TeacherPunishment
+        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, 25);
     }
 
-    /// <summary>
-    /// Devuelve al profesor a su estado normal de patrulla.
-    /// </summary>
     public void ResumePatrol()
     {
         currentState = TeacherState.Patrolling;
         isWaiting = false;
-        agent.isStopped = false; // Permite que vuelva a caminar
+        agent.isStopped = false;
+        
         questionMarkIcon.SetActive(false);
         exclamationMarkIcon.SetActive(false);
+        
+        if (animator != null)
+        {
+            animator.SetBool("IsScolding", false);
+            animator.SetBool("IsWalking", true);
+        }
+
+        if (waypoints.Length > 0) agent.SetDestination(waypoints[currentWaypointIndex].position);
     }
 }
