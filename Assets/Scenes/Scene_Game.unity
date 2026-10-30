@@ -6990,6 +6990,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6d03122eeaae894b8290e71030072a3, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1301213371}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6d03122eeaae894b8290e71030072a3, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1301213368}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6d03122eeaae894b8290e71030072a3, type: 3}
       insertIndex: -1
@@ -7000,9 +7003,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6d03122eeaae894b8290e71030072a3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1301213370}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6d03122eeaae894b8290e71030072a3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1301213371}
   m_SourcePrefab: {fileID: 100100000, guid: a6d03122eeaae894b8290e71030072a3, type: 3}
 --- !u!1 &1301213365 stripped
 GameObject:
@@ -7062,7 +7062,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1301213365}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.92
+  m_Radius: 0.48
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -7116,10 +7116,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.0827656
+  m_Radius: 0.5104492
   m_Height: 4.003806
   m_Direction: 1
-  m_Center: {x: 0.039676566, y: 1.7663308, z: 0}
+  m_Center: {x: 0.039676566, y: 1.7663308, z: -0.045788225}
 --- !u!1 &1320041736
 GameObject:
   m_ObjectHideFlags: 0
