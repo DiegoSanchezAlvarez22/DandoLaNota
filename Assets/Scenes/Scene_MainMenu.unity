@@ -873,12 +873,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AchievementManager
   allPranks:
-  - {fileID: 11400000, guid: e25906569561fed448aae1382d853053, type: 2}
-  - {fileID: 11400000, guid: 59c076f05aa24364bb387bcc98ef2f9f, type: 2}
-  - {fileID: 11400000, guid: 755b8cca42011ab4db1d009aa2e6e143, type: 2}
-  - {fileID: 11400000, guid: dd23197053817a44db940d25dece6848, type: 2}
-  - {fileID: 11400000, guid: dea67ca68da036b43a1373c7f80289d7, type: 2}
-  - {fileID: 11400000, guid: 49565735ba25d8343b6c299f8464c304, type: 2}
+  - {fileID: 11400000, guid: 2865e7fe65583dc4f9a409c2ebd52cf9, type: 2}
+  - {fileID: 11400000, guid: 6795941dcf9e69a42a4daddc10ce08a7, type: 2}
+  - {fileID: 11400000, guid: 3e77366dc0d562149a7124abdccc93bd, type: 2}
+  - {fileID: 11400000, guid: 01e59539c8d4f1f4794b627fefdacf60, type: 2}
+  - {fileID: 11400000, guid: b3fec16aac78a29408f4f71cc16c7378, type: 2}
+  - {fileID: 11400000, guid: 32c43330659484c48bfd927118a92a5a, type: 2}
+  - {fileID: 11400000, guid: 8e670353e876cb24e8bdfa339b87db3c, type: 2}
+  - {fileID: 11400000, guid: a624aec7be25ead4c84367032bbe558f, type: 2}
+  - {fileID: 11400000, guid: 59c8dbb5d12b6c140a2a23958258a8d8, type: 2}
+  - {fileID: 11400000, guid: 4727b9c0f0487cf429ede816323d155c, type: 2}
+  - {fileID: 11400000, guid: cf0c0b42014b14f4883fb895ca02d6b8, type: 2}
+  - {fileID: 11400000, guid: 0c37afb80db0efc4386f878f3a4f0eab, type: 2}
 --- !u!4 &352212642
 Transform:
   m_ObjectHideFlags: 0
@@ -1592,13 +1598,13 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
-  m_Spacing: {x: 15, y: 15}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_CellSize: {x: 175, y: 175}
+  m_Spacing: {x: 30, y: 30}
+  m_Constraint: 1
+  m_ConstraintCount: 4
 --- !u!1 &755123056
 GameObject:
   m_ObjectHideFlags: 0

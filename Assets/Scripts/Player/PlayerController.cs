@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     // Vector de velocidad vertical para aplicar la gravedad
     private Vector3 velocity;
 
+    [SerializeField] private PlayerInteraction playerInteraction; // Referencia al script de interacción del jugador
+
     private void Awake()
     {
         // Inicialización del componente CharacterController
@@ -78,13 +80,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Control de la visión de cámara independiente del estado
+        // Si estamos en medio del tiempo de tensión, bloqueamos visión y movimiento, pero aplicamos gravedad
+        if (playerInteraction != null && playerInteraction.IsFrozen)
+        {
+            ApplyGravityOnly(); 
+            return; 
+        }
+
         HandleMouseLook();
 
-        // Si el jugador está sentado, se interrumpe el movimiento WASD[cite: 14]
         if (isSeated)
         {
-            // Verificación de si se ha pulsado la tecla de levantarse en este frame
             if (standAction.action.WasPressedThisFrame())
             {
                 ChangeSeatedState(false);
@@ -92,8 +98,17 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // Control del movimiento físico si el jugador está de pie
         HandleMovement();
+    }
+
+    private void ApplyGravityOnly()
+    {
+        if (characterController.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+        velocity.y += gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
     }
 
     /// <summary>

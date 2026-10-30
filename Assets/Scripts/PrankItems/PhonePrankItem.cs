@@ -123,7 +123,7 @@ public class PhonePrankItem : PrankItem
     private void EjecutarProyector()
     {
         // Buscamos el proyector en la escena (porque el móvil es un Prefab y no puede conectarse arrastrando la variable)
-        GameObject proyector = GameObject.Find(nombreObjetoProyector);
+        GameObject proyector = GameObject.Find("Canvas_Proyector");
         if (proyector != null)
         {
             // Activamos el primer objeto hijo que tenga dentro (la imagen troll)

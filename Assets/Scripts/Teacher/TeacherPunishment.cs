@@ -7,21 +7,13 @@ using UnityEngine.AI;
 public class TeacherPunishment : MonoBehaviour
 {
     [Header("Configuración de Expulsión")]
-    // Límite de puntos para que el profesor expulse al alumno
+    // Límite de puntos para expulsar
     [SerializeField] private int expulsionThreshold = 100;
-
-    // Tiempo en segundos que el profesor se queda mirando/regañando al alumno frente a su pupitre
+    // Tiempo extra de suspense si te expulsa
     [SerializeField] private float expulsionAnimationDelay = 3f;
 
-    // Componentes internos
     private NavMeshAgent agent;
     private TeacherAI teacherAI;
-
-    private IEnumerator ResumeAfterDelay(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        teacherAI.ResumePatrol();
-    }
 
     private void Awake()
     {
@@ -29,68 +21,56 @@ public class TeacherPunishment : MonoBehaviour
         teacherAI = GetComponent<TeacherAI>();
     }
 
-    /// <summary>
-    /// Evalúa el castigo de un alumno y determina si procede expulsarlo.
-    /// Invocado por TeacherAI cuando pilla a un alumno.
-    /// </summary>
-    /// <param name="student">La identidad del estudiante pillado</param>
-    /// <param name="pointsAdded">La cantidad de puntos de castigo por la gamberrada</param>
-    /// 
-
     public void PunishStudent(StudentIdentity student, int pointsAdded)
     {
+        // Sumamos los puntos al momento
         student.AddPunishmentPoints(pointsAdded);
 
-        // Si es el jugador, se registran los puntos en el GameManager
-        if (student.IsPlayer())
+        if (student.IsPlayer() && GameManager.Instance != null)
         {
             GameManager.Instance.AddPunishmentPoints(pointsAdded);
         }
 
-        // Comprobación de si supera el límite de expulsión
-        if (student.GetPunishmentPoints() >= expulsionThreshold)
-        {
-            StartCoroutine(ExpulsionRoutine(student));
-        }
-        else
-        {
-            StartCoroutine(ResumeAfterDelay(1.5f));
-        }
+        // Iniciamos la rutina para que el profesor camine hacia el culpable
+        StartCoroutine(ScoldRoutine(student));
     }
 
-    /// <summary>
-    /// Corrutina que gestiona el acercamiento y la pausa de mirada frente al alumno.
-    /// </summary>
-    private IEnumerator ExpulsionRoutine(StudentIdentity student)
+    private IEnumerator ScoldRoutine(StudentIdentity student)
     {
-        // Desplazamiento del profesor hacia la posición exacta del pupitre del alumno
+        // Reactivamos el movimiento del agente y le decimos que vaya a la posición exacta del alumno
         agent.isStopped = false;
         agent.SetDestination(student.transform.position);
 
-        // Espera hasta que el profesor llegue físicamente al pupitre
+        // Esperamos hasta que el profesor llegue a tu lado físicamente
         while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
         {
             yield return null;
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////
-        // TODO: A FUTURO - Sustituir este tiempo de espera por la activación de la animación de expulsión //
-        // donde el profesor agarra al alumno y lo saca físicamente del aula                               //
-        /////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Obligamos al profesor a girarse para mirarte a la cara
+        Vector3 lookPosition = new Vector3(student.transform.position.x, transform.position.y, student.transform.position.z);
+        transform.LookAt(lookPosition);
 
-        // Pausa serializable (el profesor se queda parado mirando al alumno)
-        yield return new WaitForSeconds(expulsionAnimationDelay);
-
-        // Resolución del evento
-        if (student.IsPlayer())
+        // Comprobamos si superas el límite de expulsión
+        if (student.GetPunishmentPoints() >= expulsionThreshold)
         {
-            // Delegación directa al GameManager para finalizar la partida de forma centralizada
-            GameManager.Instance.EndMatch(true);
+            // Drama extra si te expulsa[cite: 2]
+            yield return new WaitForSeconds(expulsionAnimationDelay);
+            if (student.IsPlayer())
+            {
+                // Game Over: activa el panel de fin de partida
+                if (GameManager.Instance != null) GameManager.Instance.EndMatch(true);
+            }
+            else
+            {
+                student.gameObject.SetActive(false);
+                teacherAI.ResumePatrol();
+            }
         }
         else
         {
-            // Si es un NPC, se deshabilita del aula y el profesor vuelve a patrullar
-            student.gameObject.SetActive(false);
+            // Te mira fijamente exactamente 1.5 segundos y se va
+            yield return new WaitForSeconds(1.5f);
             teacherAI.ResumePatrol();
         }
     }
