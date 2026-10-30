@@ -37,6 +37,7 @@ public class PrankItem : MonoBehaviour, IInteractable
             currentPlayer = player;
             if (QTEManager.Instance != null && prankData != null)
             {
+                currentPlayer.SetFrozen(true);
                 QTEManager.Instance.StartMinigame(prankData.minigameType, OnMinigameResult);
             }
         }
@@ -83,7 +84,6 @@ public class PrankItem : MonoBehaviour, IInteractable
         }
     }
 
-    // AÑADIDO 'protected'
     protected void OnMinigameResult(bool success)
     {
         StartCoroutine(EjecutarGamberradaRutina(success));

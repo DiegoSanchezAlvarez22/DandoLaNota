@@ -33,7 +33,7 @@ public class PhonePrankItem : PrankItem
 
     public override void OnInteract(PlayerInteraction player)
     {
-        // El móvil ya no se usa con la 'E', bloqueamos este botón para usar 1, 2 o 3.
+        currentPlayer.SetFrozen(true);
         if (!isHeld) ForceEquip(player); 
     }
 

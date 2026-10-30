@@ -45,8 +45,17 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        // Inicialización del componente CharacterController
         characterController = GetComponent<CharacterController>();
+        
+        if (playerInteraction == null)
+        {
+            playerInteraction = GetComponent<PlayerInteraction>();
+            
+            if (playerInteraction == null)
+            {
+                playerInteraction = GetComponentInChildren<PlayerInteraction>();
+            }
+        }
     }
 
     /// <summary>

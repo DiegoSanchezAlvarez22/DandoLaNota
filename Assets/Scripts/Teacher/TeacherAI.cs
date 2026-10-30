@@ -90,8 +90,9 @@ public class TeacherAI : MonoBehaviour
     private IEnumerator WaitAtWaypointRoutine()
     {
         isWaiting = true;
-        if (animator != null) animator.SetBool("IsWalking", false); 
-        
+        if (animator != null) animator.SetBool("IsWalking", false);
+        transform.Rotate(0f, 180f, 0f);
+
         yield return new WaitForSeconds(waitTimeAtWaypoint);
 
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
@@ -104,6 +105,7 @@ public class TeacherAI : MonoBehaviour
     private void CheckVision()
     {
         Collider[] allColliders = Physics.OverlapSphere(eyesTransform.position, viewRadius); 
+        bool jugadorAnalizado = false;
 
         for (int i = 0; i < allColliders.Length; i++)
         {
@@ -112,28 +114,44 @@ public class TeacherAI : MonoBehaviour
             PlayerInteraction player = targetTransform.GetComponentInParent<PlayerInteraction>();
             if (player == null) player = targetTransform.GetComponentInChildren<PlayerInteraction>();
 
-            if (player != null)
+            // Si es el jugador y aún no lo hemos analizado en este frame
+            if (player != null && !jugadorAnalizado)
             {
-                Vector3 directionToTarget = (targetTransform.position - eyesTransform.position).normalized;
+                jugadorAnalizado = true; 
+
+                Vector3 puntoMiraJugador = player.transform.position + (Vector3.up * 1.2f); 
+                Vector3 directionToTarget = (puntoMiraJugador - eyesTransform.position).normalized;
+                
                 float angle = Vector3.Angle(eyesTransform.forward, directionToTarget);
-                float distance = Vector3.Distance(eyesTransform.position, targetTransform.position);
+                float distance = Vector3.Distance(eyesTransform.position, puntoMiraJugador);
 
                 if (angle < viewAngle / 2f)
                 {
+                    // Trazamos el rayo hacia el pecho
                     if (!Physics.Raycast(eyesTransform.position, directionToTarget, distance, obstacleMask))
                     {
                         if (player.IsFrozen)
-                        {
-                            player.ClearHand();
-                            player.SetFrozen(false);
-                            
-                            StudentIdentity identity = player.GetComponentInParent<StudentIdentity>();
-                            if (identity != null) CatchStudent(identity);
-                            return; 
-                        }
+                            {
+                                Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista.");
+                                                        
+                                PrankItem[] items = FindObjectsOfType<PrankItem>();
+                                foreach (var item in items) item.StopAllCoroutines();
+                                                        
+                                // EnvironmentPrank[] entornos = FindObjectsOfType<EnvironmentPrank>();
+                                // foreach (var entorno in entornos) entorno.StopAllCoroutines();
+
+                                PrankItem objetoEnMano = player.GetComponentInChildren<PrankItem>();
+                                if (objetoEnMano != null) objetoEnMano.Drop(Vector3.zero);
+
+                                player.ClearHand();
+                                player.UpdateActionTimer(0);
+
+                                StudentIdentity identity = player.GetComponentInParent<StudentIdentity>();
+                                if (identity != null) CatchStudent(identity);
+                                return; 
+                            }
                     }
                 }
-                break; 
             }
         }
     }
@@ -163,7 +181,6 @@ public class TeacherAI : MonoBehaviour
         GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, 25);
     }
 
-    // === NUEVO: FUNCIÓN PARA LA ZANCADILLA ===
     public void TripOver()
     {
         // Si ya está cayéndose o regañando, no se tropieza otra vez
@@ -196,7 +213,7 @@ public class TeacherAI : MonoBehaviour
         ResumePatrol();
     }
 
-    public void ResumePatrol()
+public void ResumePatrol()
     {
         currentState = TeacherState.Patrolling;
         isWaiting = false;
@@ -207,6 +224,7 @@ public class TeacherAI : MonoBehaviour
         
         if (animator != null)
         {
+            // VOLVEMOS A APAGAR EL ENFADO AL TERMINAR
             animator.SetBool("IsScolding", false);
             animator.SetBool("IsWalking", true);
         }

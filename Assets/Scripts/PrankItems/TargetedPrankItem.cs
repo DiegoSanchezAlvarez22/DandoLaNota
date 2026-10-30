@@ -54,6 +54,7 @@ public class TargetedPrankItem : PrankItem
                 
                 if (QTEManager.Instance != null && prankData != null)
                 {
+                    currentPlayer.SetFrozen(true);
                     QTEManager.Instance.StartMinigame(prankData.minigameType, OnMinigameResult);
                 }
             }
