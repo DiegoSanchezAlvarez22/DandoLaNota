@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI; // Necesario si se referencian componentes de UI directamente (opcional aquí)
+using UnityEngine.Audio;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -16,8 +17,25 @@ public class MainMenuController : MonoBehaviour
     // Referencia al panel de creditos
     [SerializeField] private GameObject creditsCanvas;
 
+    [Header("Configuración de Audio")]
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Slider masterSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
+
+    [Header("Configuración de Pantalla")]
+    [SerializeField] private Toggle fullscreenToggle;
+
+    private const string MASTER_KEY = "MasterVolume";
+    private const string MUSIC_KEY = "MusicVolume";
+    private const string SFX_KEY = "SFXVolume";
+    private const string FULLSCREEN_KEY = "IsFullscreen";
+
     private void Start()
     {
+        // Cargar las configuraciones guardadas de audio y pantalla
+        LoadSettings();
+
         // Solo mostrar el panel principal al iniciar el juego
         ShowMainPanelOnly();
     }
@@ -95,5 +113,60 @@ public class MainMenuController : MonoBehaviour
 
         // Instrucción que cierra el juego (solo funciona en la Build)
         Application.Quit();
+    }
+
+    // ========================================================================
+    // FUNCIONES DE OPCIONES Y GUARDADO DE DATOS
+    // ========================================================================
+
+    public void SetMasterVolume(float value)
+    {
+        float db = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20;
+        if (audioMixer != null) audioMixer.SetFloat("MasterVol", db);
+        PlayerPrefs.SetFloat(MASTER_KEY, value);
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        float db = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20;
+        if (audioMixer != null) audioMixer.SetFloat("MusicVol", db);
+        PlayerPrefs.SetFloat(MUSIC_KEY, value);
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        float db = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20;
+        if (audioMixer != null) audioMixer.SetFloat("SFXVol", db);
+        PlayerPrefs.SetFloat(SFX_KEY, value);
+    }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+        PlayerPrefs.SetInt(FULLSCREEN_KEY, isFullscreen ? 1 : 0);
+    }
+
+    private void LoadSettings()
+    {
+        float masterVal = PlayerPrefs.GetFloat(MASTER_KEY, 0.75f);
+        float musicVal = PlayerPrefs.GetFloat(MUSIC_KEY, 0.75f);
+        float sfxVal = PlayerPrefs.GetFloat(SFX_KEY, 0.75f);
+
+        if (masterSlider != null) masterSlider.value = masterVal;
+        if (musicSlider != null) musicSlider.value = musicVal;
+        if (sfxSlider != null) sfxSlider.value = sfxVal;
+
+        SetMasterVolume(masterVal);
+        SetMusicVolume(musicVal);
+        SetSFXVolume(sfxVal);
+
+        bool isFullscreen = PlayerPrefs.GetInt(FULLSCREEN_KEY, 1) == 1;
+        if (fullscreenToggle != null) fullscreenToggle.isOn = isFullscreen;
+        SetFullscreen(isFullscreen);
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.Save();
     }
 }
