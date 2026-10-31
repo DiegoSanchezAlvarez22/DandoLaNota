@@ -17866,6 +17866,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1219144639742088616, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4842945863215174235}
+    - targetCorrespondingSourceObject: {fileID: 1219144639742088616, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4842945863215174236}
     - targetCorrespondingSourceObject: {fileID: 6877017332342721132, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4842945863215174233}
@@ -17899,6 +17905,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 2
   nombreObjetivo: Profesor
+--- !u!1 &4842945863215174234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1219144639742088616, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+  m_PrefabInstance: {fileID: 4842945863215174229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4842945863215174235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842945863215174234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52ac7468a9f89949a082928513ffc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeacherCough
+  sonido:
+  - {fileID: 8300000, guid: b89b6ff070d69ae479633cf979d20d32, type: 3}
+  - {fileID: 8300000, guid: 3464006100e3aa14a97a72968b0f21ff, type: 3}
+  min: 10
+  max: 25
+  volumen: 0.204
+--- !u!114 &4842945863215174236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842945863215174234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f92a9d9bc4bf746ac70910efe4cea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PasosProfesor
+  pasos:
+  - {fileID: 8300000, guid: a4525181c6778ad4d89fa6b74d850da7, type: 3}
+  intervalo: 3.17
+  volumen: 0.086
+  animator: {fileID: 4842945863215174231}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
