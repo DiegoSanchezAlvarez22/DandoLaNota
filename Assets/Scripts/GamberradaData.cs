@@ -19,6 +19,8 @@ public class GamberradaData : ScriptableObject
     [Header("Tiempos y Penalización")]
     [Tooltip("Tiempo en segundos que el jugador debe estar quieto para completar la acción")]
     public float tiempoEjecucionBase = 2f;
+    [Tooltip("Puntos de castigo que se suman si el profesor te pilla haciendo esta gamberrada")]
+public int punishmentPoints = 25; // Valor por defecto
     public TipoPenalizacion penalizacionPorFallo;
     [Tooltip("Segundos extra que tardarás si fallas (Solo para AumentarTiempo)")]
     public float tiempoPenalizacion = 2f;

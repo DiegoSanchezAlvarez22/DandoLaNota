@@ -17,6 +17,7 @@ MonoBehaviour:
   minigameType: 2
   dificultad: 1
   tiempoEjecucionBase: 5
+  punishmentPoints: 3500
   penalizacionPorFallo: 1
   tiempoPenalizacion: 2
   sonidoPenalizacion: {fileID: 0}
