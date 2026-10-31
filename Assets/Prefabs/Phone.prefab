@@ -116,13 +116,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhonePrankItem
   prankData: {fileID: 11400000, guid: 01e59539c8d4f1f4794b627fefdacf60, type: 2}
-  pointsAwarded: 500
+  pointsAwarded: 5000
   dataJugar: {fileID: 11400000, guid: 3e77366dc0d562149a7124abdccc93bd, type: 2}
   dataLlamar: {fileID: 11400000, guid: 01e59539c8d4f1f4794b627fefdacf60, type: 2}
   dataProyector: {fileID: 11400000, guid: cf0c0b42014b14f4883fb895ca02d6b8, type: 2}
-  puntosJugar: 300
-  puntosLlamar: 400
-  puntosProyector: 600
+  puntosJugar: 5000
+  puntosLlamar: 7000
+  puntosProyector: 10000
   tonoLlamada: {fileID: 8300000, guid: 8d6b689bd91493a42b55cca086aa9e91, type: 3}
   nombreObjetoProyector: Canvas_Proyector
 --- !u!65 &5512350339888978485

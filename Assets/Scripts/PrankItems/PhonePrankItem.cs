@@ -27,7 +27,6 @@ public class PhonePrankItem : PrankItem
     public override string GetInteractPrompt()
     {
         if (!isHeld) return "[V] Sacar Móvil";
-        // Cambiamos las instrucciones para mostrar el menú de opciones
         return "[1] Jugar  [2] Llamar  [3] Proyector\n[Q] Guardar";
     }
 
@@ -39,7 +38,6 @@ public class PhonePrankItem : PrankItem
 
     private void Update()
     {
-        // Leemos las teclas 1, 2 y 3 para elegir la gamberrada si tenemos el móvil en la mano
         if (isHeld && currentPlayer != null && !currentPlayer.IsFrozen && Keyboard.current != null)
         {
             if (Keyboard.current.digit1Key.wasPressedThisFrame) IniciarGamberradaMovil(MobileAction.Jugar, dataJugar);
@@ -57,7 +55,7 @@ public class PhonePrankItem : PrankItem
         }
 
         accionActual = tipo;
-        prankData = data; // Reemplazamos los datos base por los de la acción elegida
+        prankData = data; 
         
         if (accionActual == MobileAction.Jugar) pointsAwarded = puntosJugar;
         else if (accionActual == MobileAction.Llamar) pointsAwarded = puntosLlamar;
@@ -73,7 +71,6 @@ public class PhonePrankItem : PrankItem
 
     public override void Drop(Vector3 throwForce)
     {
-        // El móvil se guarda en el bolsillo (se destruye)
         isHeld = false;
         if (currentPlayer != null) currentPlayer.ClearHand();
         Destroy(gameObject);
@@ -87,7 +84,6 @@ public class PhonePrankItem : PrankItem
         if (GameManager.Instance != null)
             GameManager.Instance.AddLaughPoints(pointsAwarded);
 
-        // EJECUCIÓN DE LOS EFECTOS ESPECIALES
         if (accionActual == MobileAction.Llamar)
         {
             EjecutarLlamada();
@@ -106,29 +102,48 @@ public class PhonePrankItem : PrankItem
 
     private void EjecutarLlamada()
     {
-        // Filtramos la lista global para buscar solo a los alumnos
-        List<PrankTarget> alumnos = new List<PrankTarget>();
-        foreach (var target in PrankTarget.todosLosObjetivos)
+        StudentIdentity[] todosLosAlumnos = FindObjectsOfType<StudentIdentity>();
+        List<StudentIdentity> alumnosValidos = new List<StudentIdentity>();
+
+        // Filtramos para quedarnos solo con los NPCs
+        foreach (StudentIdentity alumno in todosLosAlumnos)
         {
-            if (target.tipo == TargetType.Alumno) alumnos.Add(target);
+            if (!alumno.IsPlayer() && alumno.gameObject.activeInHierarchy)
+            {
+                alumnosValidos.Add(alumno);
+            }
         }
 
-        if (alumnos.Count > 0 && tonoLlamada != null)
+        if (alumnosValidos.Count > 0)
         {
-            // Elegimos un alumno al azar y hacemos sonar la música en su posición física 3D
-            PrankTarget victima = alumnos[Random.Range(0, alumnos.Count)];
-            AudioSource.PlayClipAtPoint(tonoLlamada, victima.transform.position);
-            Debug.Log("Llamando a: " + victima.nombreObjetivo);
+            int indiceAleatorio = Random.Range(0, alumnosValidos.Count);
+            StudentIdentity victima = alumnosValidos[indiceAleatorio];
+
+            Debug.Log($"[Gamberrada Móvil] ¡Llamando a: {victima.gameObject.name} (Pupitre {victima.GetDeskID()})!");
+
+            if (tonoLlamada != null)
+            {
+                AudioSource.PlayClipAtPoint(tonoLlamada, victima.transform.position);
+            }
+
+            // Enviamos al profesor a echarle la bronca al NPC
+            TeacherAI profesor = FindObjectOfType<TeacherAI>();
+            if (profesor != null)
+            {
+                profesor.CatchStudent(victima, currentPlayer);
+            }
+        }
+        else
+        {
+            Debug.LogError("[Gamberrada Móvil] ERROR: La lista de víctimas está vacía. ¡Asegúrate de que los NPCs tengan el script 'StudentIdentity' añadido y 'Is Player' desmarcado!");
         }
     }
 
     private void EjecutarProyector()
     {
-        // Buscamos el proyector en la escena (porque el móvil es un Prefab y no puede conectarse arrastrando la variable)
         GameObject proyector = GameObject.Find("Canvas_Proyector");
         if (proyector != null)
         {
-            // Activamos el primer objeto hijo que tenga dentro (la imagen troll)
             proyector.transform.GetChild(0).gameObject.SetActive(true);
             Debug.Log("¡Imagen subida al proyector!");
         }

@@ -983,6 +983,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo04
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (18)
@@ -997,6 +1001,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 98861835}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 98861840}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 98861839}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &98861834 stripped
 GameObject:
@@ -1051,6 +1061,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 98861833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &98861838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 98861833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &98861839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98861838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 4
+  punishmentPoints: 0
+--- !u!114 &98861840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98861838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_04
 --- !u!1 &104515738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1512,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo18
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (2)
@@ -1482,6 +1530,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 162991159}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 162991164}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 162991163}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &162991158 stripped
 GameObject:
@@ -1536,6 +1590,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 162991157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &162991162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 162991157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &162991163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162991162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 18
+  punishmentPoints: 0
+--- !u!114 &162991164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162991162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_18
 --- !u!1 &186858385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +1984,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
     - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo08
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1928,6 +2020,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 228257951}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228257953}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228257952}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &228257947 stripped
 GameObject:
@@ -1995,7 +2093,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
-  nombreObjetivo: Alumno13
+  nombreObjetivo: Alumno_08
+--- !u!114 &228257952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228257950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 0
+  punishmentPoints: 0
+--- !u!114 &228257953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228257950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 0
+  nombreObjetivo: Pared
 --- !u!1 &235646265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,6 +2682,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo01
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (20)
@@ -2569,6 +2700,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 294618722}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 294618727}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 294618726}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &294618721 stripped
 GameObject:
@@ -2623,6 +2760,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 294618720}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &294618725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 294618720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &294618726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294618725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 0
+  punishmentPoints: 0
+--- !u!114 &294618727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294618725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_01
 --- !u!1 &318703733
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,6 +3314,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo11
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (7)
@@ -3157,6 +3332,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 344606317}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344606322}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344606321}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &344606316 stripped
 GameObject:
@@ -3211,6 +3392,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 344606315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &344606320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 344606315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &344606321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344606320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 11
+  punishmentPoints: 0
+--- !u!114 &344606322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344606320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_11
 --- !u!1001 &348538452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3284,6 +3499,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
     - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo17
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3313,6 +3532,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 348538454}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 348538459}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 348538458}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &348538453 stripped
 GameObject:
@@ -3367,6 +3592,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 348538452}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &348538457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 348538452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &348538458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348538457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 17
+  punishmentPoints: 0
+--- !u!114 &348538459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348538457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_17
 --- !u!1 &392737339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,6 +4721,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo13
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (8)
@@ -4476,6 +4739,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 569913916}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 569913921}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 569913920}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &569913915 stripped
 GameObject:
@@ -4530,6 +4799,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 569913914}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &569913919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 569913914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &569913920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569913919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 13
+  punishmentPoints: 0
+--- !u!114 &569913921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569913919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_13
 --- !u!1001 &572401228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6565,6 +6868,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo02
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (16)
@@ -6579,6 +6886,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 826173213}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 826173218}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 826173217}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &826173212 stripped
 GameObject:
@@ -6633,6 +6946,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 826173211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &826173216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 826173211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &826173217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826173216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 0
+  punishmentPoints: 0
+--- !u!114 &826173218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826173216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_02
 --- !u!1 &878206327
 GameObject:
   m_ObjectHideFlags: 0
@@ -8415,6 +8762,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo15
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (10)
@@ -8429,6 +8780,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1165630933}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1165630938}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1165630937}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1165630932 stripped
 GameObject:
@@ -8483,6 +8840,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1165630931}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165630936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1165630931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1165630937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165630936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 15
+  punishmentPoints: 0
+--- !u!114 &1165630938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165630936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_15
 --- !u!1 &1227058473
 GameObject:
   m_ObjectHideFlags: 0
@@ -9195,6 +9586,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo06
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (12)
@@ -9209,6 +9604,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1274695278}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1274695283}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1274695282}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1274695277 stripped
 GameObject:
@@ -9263,6 +9664,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1274695276}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1274695281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1274695276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1274695282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274695281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 6
+  punishmentPoints: 0
+--- !u!114 &1274695283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274695281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_06
 --- !u!1 &1280709262
 GameObject:
   m_ObjectHideFlags: 0
@@ -10350,6 +10785,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo16
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (5)
@@ -10364,6 +10803,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1382056036}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1382056041}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1382056040}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1382056035 stripped
 GameObject:
@@ -10418,6 +10863,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1382056034}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1382056039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1382056034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1382056040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382056039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 16
+  punishmentPoints: 0
+--- !u!114 &1382056041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382056039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_16
 --- !u!1001 &1397437869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10486,6 +10965,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo05
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (19)
@@ -10500,6 +10983,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1397437871}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1397437876}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1397437875}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1397437870 stripped
 GameObject:
@@ -10554,6 +11043,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1397437869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1397437874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1397437869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1397437875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397437874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 5
+  punishmentPoints: 0
+--- !u!114 &1397437876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397437874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_05
 --- !u!1001 &1412955519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11585,6 +12108,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo09
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (14)
@@ -11599,6 +12126,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1623967335}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1623967340}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1623967339}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1623967334 stripped
 GameObject:
@@ -11653,6 +12186,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1623967333}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1623967338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1623967333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1623967339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623967338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 9
+  punishmentPoints: 0
+--- !u!114 &1623967340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623967338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_09
 --- !u!1 &1637338818
 GameObject:
   m_ObjectHideFlags: 0
@@ -12357,6 +12924,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo12
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (6)
@@ -12371,6 +12942,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1728549234}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1728549239}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1728549238}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1728549233 stripped
 GameObject:
@@ -12425,6 +13002,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1728549232}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1728549237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1728549232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1728549238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728549237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 12
+  punishmentPoints: 0
+--- !u!114 &1728549239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728549237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_12
 --- !u!1001 &1765706442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12493,6 +13104,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo19
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (3)
@@ -12507,6 +13122,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1765706444}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1765706449}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1765706448}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1765706443 stripped
 GameObject:
@@ -12561,6 +13182,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1765706442}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1765706447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1765706442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1765706448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765706447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 19
+  punishmentPoints: 0
+--- !u!114 &1765706449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765706447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_19
 --- !u!1 &1778565029
 GameObject:
   m_ObjectHideFlags: 0
@@ -12664,6 +13319,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (15)
@@ -12678,6 +13337,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1780969683}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1780969688}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1780969687}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1780969682 stripped
 GameObject:
@@ -12732,6 +13397,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1780969681}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1780969686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1780969681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1780969687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780969686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 10
+  punishmentPoints: 0
+--- !u!114 &1780969688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780969686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_10
 --- !u!1 &1788793060
 GameObject:
   m_ObjectHideFlags: 0
@@ -13414,6 +14113,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo20
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (4)
@@ -13428,6 +14131,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1913031880}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1913031885}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1913031884}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1913031879 stripped
 GameObject:
@@ -13482,6 +14191,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1913031878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1913031883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1913031878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1913031884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913031883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 20
+  punishmentPoints: 0
+--- !u!114 &1913031885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913031883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_20
 --- !u!1 &1919258026
 GameObject:
   m_ObjectHideFlags: 0
@@ -13687,6 +14430,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo03
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (17)
@@ -13701,6 +14448,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1929721162}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1929721167}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1929721166}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1929721161 stripped
 GameObject:
@@ -13755,6 +14508,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 1929721160}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1929721165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 1929721160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1929721166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929721165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 0
+  punishmentPoints: 0
+--- !u!114 &1929721167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929721165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_03
 --- !u!1 &1931319814
 GameObject:
   m_ObjectHideFlags: 0
@@ -15045,6 +15832,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2b5441c71ef384c4095902336a9908fb, type: 2}
+    - target: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      propertyPath: m_Name
+      value: Cuerpo14
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       propertyPath: m_Name
       value: PruebaSentado (9)
@@ -15059,6 +15850,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2075919353}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2075919358}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2075919357}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &2075919352 stripped
 GameObject:
@@ -15113,6 +15910,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e5f079394d2694da39499c3747559c, type: 3}
   m_PrefabInstance: {fileID: 2075919351}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2075919356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+  m_PrefabInstance: {fileID: 2075919351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2075919357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075919356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78de2934823e6c4b96feb4517282b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentIdentity
+  isPlayer: 0
+  deskID: 14
+  punishmentPoints: 0
+--- !u!114 &2075919358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075919356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 1
+  nombreObjetivo: Alumno_14
 --- !u!1 &2088254997
 GameObject:
   m_ObjectHideFlags: 0
@@ -15776,6 +16607,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5161586769463914070, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
+      propertyPath: deskID
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5617415015308590497, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
       propertyPath: puntosJugar
       value: 3000
@@ -16045,10 +16880,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6877017332342721132, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: m_Name
+      value: CuerpoProfesor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6877017332342721132, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4842945863215174233}
   m_SourcePrefab: {fileID: 100100000, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
 --- !u!4 &4842945863215174230 stripped
 Transform:
@@ -16060,6 +16902,25 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4483669154049369068, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
   m_PrefabInstance: {fileID: 4842945863215174229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4842945863215174232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6877017332342721132, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+  m_PrefabInstance: {fileID: 4842945863215174229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4842945863215174233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842945863215174232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acc494f63770c9428b6eaf6fd9e5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
+  tipo: 2
+  nombreObjetivo: Profesor
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
