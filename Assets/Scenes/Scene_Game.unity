@@ -1639,7 +1639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThrowablePrankItem
   prankData: {fileID: 11400000, guid: 6795941dcf9e69a42a4daddc10ce08a7, type: 2}
   pointsAwarded: 2000
-  fuerzaLanzamiento: 3
+  fuerzaLanzamiento: 1.5
   tiempoDeVidaTrasLanzar: 4
 --- !u!1001 &228257946
 PrefabInstance:
@@ -11882,6 +11882,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5617415015308590497, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
+      propertyPath: puntosJugar
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617415015308590497, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
+      propertyPath: puntosLlamar
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617415015308590497, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
+      propertyPath: pointsAwarded
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617415015308590497, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
+      propertyPath: puntosProyector
+      value: 6000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11953,6 +11969,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 4842945863215174231}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: viewAngle
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: viewRadius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: eyesTransform
+      value: 
+      objectReference: {fileID: 4842945863215174230}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
       propertyPath: questionMarkIcon
       value: 
       objectReference: {fileID: 0}
@@ -12020,11 +12052,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4483669154049369068, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+--- !u!4 &4842945863215174230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2974989848617631415, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+  m_PrefabInstance: {fileID: 4842945863215174229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4842945863215174231 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4483669154049369068, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+  m_PrefabInstance: {fileID: 4842945863215174229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

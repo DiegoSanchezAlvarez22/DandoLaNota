@@ -43,6 +43,7 @@ public class EnvironmentPrank : MonoBehaviour, IInteractable
         if (QTEManager.Instance != null && prankData != null)
         {
             player.SetFrozen(true);
+            player.SetCurrentPrank(prankData);
             QTEManager.Instance.StartMinigame(prankData.minigameType, (exito) => OnMinigameResult(exito, player));
         }
     }

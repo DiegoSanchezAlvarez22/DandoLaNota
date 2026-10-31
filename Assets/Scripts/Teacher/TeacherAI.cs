@@ -124,13 +124,17 @@ public class TeacherAI : MonoBehaviour
                 float angle = Vector3.Angle(eyesTransform.forward, directionToTarget);
                 float distance = Vector3.Distance(eyesTransform.position, puntoMiraJugador);
 
-                if (angle < viewAngle / 2f)
+                // === SOLUCIÓN: Detección por cono visual O por contacto/proximidad ===
+                bool estaEnCono = angle < viewAngle / 2f;
+                bool estaMuyCerca = distance <= 1.5f; // A metro y medio te pilla aunque no te mire directamente
+
+                if (estaEnCono || estaMuyCerca)
                 {
                     if (!Physics.Raycast(eyesTransform.position, directionToTarget, distance, obstacleMask))
                     {
                         if (playerDetectado.IsFrozen)
                         {
-                            Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista.");
+                            Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista o por proximidad.");
                             
                             PrankItem[] items = FindObjectsOfType<PrankItem>();
                             foreach (var item in items) item.StopAllCoroutines();
@@ -141,12 +145,13 @@ public class TeacherAI : MonoBehaviour
                             PrankItem objetoEnMano = playerDetectado.GetComponentInChildren<PrankItem>();
                             if (objetoEnMano != null) objetoEnMano.Drop(Vector3.zero);
 
+                            StudentIdentity identity = playerDetectado.GetComponentInParent<StudentIdentity>();
+                            if (identity != null) CatchStudent(identity, playerDetectado);
+                            
                             playerDetectado.ClearHand();
                             playerDetectado.UpdateActionTimer(0);
                             
-                            StudentIdentity identity = playerDetectado.GetComponentInParent<StudentIdentity>();
-                            if (identity != null) CatchStudent(identity, playerDetectado); // <--- Le pasamos playerDetectado aquí
-                            return;
+                            return; 
                         }
                     }
                 }
