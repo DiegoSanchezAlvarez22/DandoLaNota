@@ -16,9 +16,9 @@ MonoBehaviour:
   prankName: Zancadilla Profesor
   minigameType: 1
   dificultad: 2
-  tiempoEjecucionBase: 2
+  tiempoEjecucionBase: 0
   penalizacionPorFallo: 1
-  tiempoPenalizacion: 2
+  tiempoPenalizacion: 0
   sonidoPenalizacion: {fileID: 0}
   icon: {fileID: 0}
   demoVideo: {fileID: 0}
