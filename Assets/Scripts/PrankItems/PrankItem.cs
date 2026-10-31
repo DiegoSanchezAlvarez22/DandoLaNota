@@ -38,6 +38,7 @@ public class PrankItem : MonoBehaviour, IInteractable
             if (QTEManager.Instance != null && prankData != null)
             {
                 currentPlayer.SetFrozen(true);
+                currentPlayer.SetCurrentPrank(prankData);
                 QTEManager.Instance.StartMinigame(prankData.minigameType, OnMinigameResult);
             }
         }

@@ -65,6 +65,8 @@ public class PhonePrankItem : PrankItem
 
         if (QTEManager.Instance != null)
         {
+            currentPlayer.SetFrozen(true); 
+            currentPlayer.SetCurrentPrank(prankData);
             QTEManager.Instance.StartMinigame(prankData.minigameType, OnMinigameResult);
         }
     }

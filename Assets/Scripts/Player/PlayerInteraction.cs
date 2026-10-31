@@ -33,6 +33,10 @@ public class PlayerInteraction : MonoBehaviour
 
     public bool IsFrozen { get; private set; }
 
+    // Memoria para saber qué gamberrada estamos ejecutando ahora mismo
+    private GamberradaData currentPrankData;
+    public GamberradaData CurrentPrankData => currentPrankData;
+
     private void OnEnable()
     {
         if (interactAction != null) { interactAction.action.Enable(); interactAction.action.performed += ContextInteract; }
@@ -76,6 +80,12 @@ public class PlayerInteraction : MonoBehaviour
 
         currentTarget = null;
         if (interactionPromptUI != null) interactionPromptUI.text = "";
+    }
+
+    // Función para guardar o borrar la gamberrada actual
+    public void SetCurrentPrank(GamberradaData data)
+    {
+        currentPrankData = data;
     }
 
     private void ContextInteract(InputAction.CallbackContext context)
@@ -128,6 +138,10 @@ public class PlayerInteraction : MonoBehaviour
     }
     public Transform GetHandSocket() => handSocket;
     public void EquipItem(PrankItem item) => heldItem = item;
-    public void ClearHand() => heldItem = null;
+    public void ClearHand()
+    {
+        heldItem = null;
+        SetCurrentPrank(null);
+    } 
     public Transform GetPlayerCamera() => playerCamera; 
 }

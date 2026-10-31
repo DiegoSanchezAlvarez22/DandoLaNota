@@ -31,8 +31,8 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private float tiempoRecuperacionCaida = 4f;
 
     [Header("Indicadores Visuales")]
-    [SerializeField] private GameObject questionMarkIcon;
-    [SerializeField] private GameObject exclamationMarkIcon;
+    //[SerializeField] private GameObject questionMarkIcon;
+    //[SerializeField] private GameObject exclamationMarkIcon;
 
     private NavMeshAgent agent;
 
@@ -44,8 +44,8 @@ public class TeacherAI : MonoBehaviour
 
     private void Start()
     {
-        questionMarkIcon.SetActive(false);
-        exclamationMarkIcon.SetActive(false);
+        //questionMarkIcon.SetActive(false);
+        //exclamationMarkIcon.SetActive(false);
 
         if (waypoints.Length > 0)
         {
@@ -111,15 +111,14 @@ public class TeacherAI : MonoBehaviour
         {
             Transform targetTransform = allColliders[i].transform;
             
-            PlayerInteraction player = targetTransform.GetComponentInParent<PlayerInteraction>();
-            if (player == null) player = targetTransform.GetComponentInChildren<PlayerInteraction>();
+            PlayerInteraction playerDetectado = targetTransform.GetComponentInParent<PlayerInteraction>();
+            if (playerDetectado == null) playerDetectado = targetTransform.GetComponentInChildren<PlayerInteraction>();
 
-            // Si es el jugador y aún no lo hemos analizado en este frame
-            if (player != null && !jugadorAnalizado)
+            if (playerDetectado != null && !jugadorAnalizado)
             {
                 jugadorAnalizado = true; 
 
-                Vector3 puntoMiraJugador = player.transform.position + (Vector3.up * 1.2f); 
+                Vector3 puntoMiraJugador = playerDetectado.transform.position + (Vector3.up * 1.2f); 
                 Vector3 directionToTarget = (puntoMiraJugador - eyesTransform.position).normalized;
                 
                 float angle = Vector3.Angle(eyesTransform.forward, directionToTarget);
@@ -127,29 +126,28 @@ public class TeacherAI : MonoBehaviour
 
                 if (angle < viewAngle / 2f)
                 {
-                    // Trazamos el rayo hacia el pecho
                     if (!Physics.Raycast(eyesTransform.position, directionToTarget, distance, obstacleMask))
                     {
-                        if (player.IsFrozen)
-                            {
-                                Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista.");
-                                                        
-                                PrankItem[] items = FindObjectsOfType<PrankItem>();
-                                foreach (var item in items) item.StopAllCoroutines();
-                                                        
-                                // EnvironmentPrank[] entornos = FindObjectsOfType<EnvironmentPrank>();
-                                // foreach (var entorno in entornos) entorno.StopAllCoroutines();
+                        if (playerDetectado.IsFrozen)
+                        {
+                            Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista.");
+                            
+                            PrankItem[] items = FindObjectsOfType<PrankItem>();
+                            foreach (var item in items) item.StopAllCoroutines();
+                            
+                            EnvironmentPrank[] entornos = FindObjectsOfType<EnvironmentPrank>();
+                            foreach (var entorno in entornos) entorno.StopAllCoroutines();
 
-                                PrankItem objetoEnMano = player.GetComponentInChildren<PrankItem>();
-                                if (objetoEnMano != null) objetoEnMano.Drop(Vector3.zero);
+                            PrankItem objetoEnMano = playerDetectado.GetComponentInChildren<PrankItem>();
+                            if (objetoEnMano != null) objetoEnMano.Drop(Vector3.zero);
 
-                                player.ClearHand();
-                                player.UpdateActionTimer(0);
-
-                                StudentIdentity identity = player.GetComponentInParent<StudentIdentity>();
-                                if (identity != null) CatchStudent(identity);
-                                return; 
-                            }
+                            playerDetectado.ClearHand();
+                            playerDetectado.UpdateActionTimer(0);
+                            
+                            StudentIdentity identity = playerDetectado.GetComponentInParent<StudentIdentity>();
+                            if (identity != null) CatchStudent(identity, playerDetectado); // <--- Le pasamos playerDetectado aquí
+                            return;
+                        }
                     }
                 }
             }
@@ -162,23 +160,30 @@ public class TeacherAI : MonoBehaviour
         if (currentState == TeacherState.Catching || currentState == TeacherState.Tripped) return;
         
         currentState = TeacherState.Suspicious;
-        questionMarkIcon.SetActive(true);
-        exclamationMarkIcon.SetActive(false);
+        //questionMarkIcon.SetActive(true);
+        //exclamationMarkIcon.SetActive(false);
         
         agent.SetDestination(noisePosition);
         if (animator != null) animator.SetBool("IsWalking", true);
         isWaiting = false;
     }
 
-    public void CatchStudent(StudentIdentity guiltyStudent)
+    public void CatchStudent(StudentIdentity guiltyStudent, PlayerInteraction playerInvolucrado = null)
     {
         currentState = TeacherState.Catching;
         agent.isStopped = true;
         
-        questionMarkIcon.SetActive(false);
-        exclamationMarkIcon.SetActive(true);
+        //questionMarkIcon.SetActive(false);
+        //exclamationMarkIcon.SetActive(true);
 
-        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, 25);
+        // Obtenemos los puntos directamente del ScriptableObject de la jugarreta actual, o 25 por defecto
+        int puntosDeLaGamberrada = 25;
+        if (playerInvolucrado != null && playerInvolucrado.CurrentPrankData != null)
+        {
+            puntosDeLaGamberrada = playerInvolucrado.CurrentPrankData.punishmentPoints;
+        }
+
+        GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, puntosDeLaGamberrada);
     }
 
     public void TripOver()
@@ -191,8 +196,8 @@ public class TeacherAI : MonoBehaviour
         currentState = TeacherState.Tripped;
         agent.isStopped = true; // Se detiene en seco para no resbalar por el suelo
         
-        questionMarkIcon.SetActive(false);
-        exclamationMarkIcon.SetActive(false);
+        //questionMarkIcon.SetActive(false);
+        //exclamationMarkIcon.SetActive(false);
 
         if (animator != null)
         {
@@ -219,12 +224,11 @@ public void ResumePatrol()
         isWaiting = false;
         agent.isStopped = false; 
         
-        questionMarkIcon.SetActive(false);
-        exclamationMarkIcon.SetActive(false);
+        //questionMarkIcon.SetActive(false);
+        //exclamationMarkIcon.SetActive(false);
         
         if (animator != null)
         {
-            // VOLVEMOS A APAGAR EL ENFADO AL TERMINAR
             animator.SetBool("IsScolding", false);
             animator.SetBool("IsWalking", true);
         }
