@@ -18,6 +18,8 @@ public class SettingsManager : MonoBehaviour
     public float currentSFX { get; private set; }
     public bool currentFullscreen { get; private set; }
 
+    public float currentSensitivity = 75f;
+
     private void Awake()
     {
         if (Instance == null)
@@ -29,6 +31,7 @@ public class SettingsManager : MonoBehaviour
             currentMaster = PlayerPrefs.GetFloat(MASTER_KEY, 0.75f);
             currentMusic = PlayerPrefs.GetFloat(MUSIC_KEY, 0.75f);
             currentSFX = PlayerPrefs.GetFloat(SFX_KEY, 0.75f);
+            currentSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 75f);
             currentFullscreen = PlayerPrefs.GetInt(FULLSCREEN_KEY, 1) == 1;
         }
         else
@@ -43,6 +46,7 @@ public class SettingsManager : MonoBehaviour
         SetMasterVolume(currentMaster);
         SetMusicVolume(currentMusic);
         SetSFXVolume(currentSFX);
+        SetSensitivity(currentSensitivity);
         SetFullscreen(currentFullscreen);
     }
 
@@ -82,6 +86,13 @@ public class SettingsManager : MonoBehaviour
         Screen.fullScreen = isFullscreen;
         
         PlayerPrefs.SetInt(FULLSCREEN_KEY, isFullscreen ? 1 : 0);
+        PlayerPrefs.Save(); // GUARDADO INMEDIATO
+    }
+
+    public void SetSensitivity(float value)
+    {
+        currentSensitivity = value;
+        PlayerPrefs.SetFloat("MouseSensitivity", value);
         PlayerPrefs.Save(); // GUARDADO INMEDIATO
     }
 }

@@ -10,6 +10,7 @@ public class SettingsMenuUI : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
+    [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Toggle fullscreenToggle;
 
     private bool isUpdatingUI = false;
@@ -24,6 +25,7 @@ public class SettingsMenuUI : MonoBehaviour
             if (musicSlider != null) musicSlider.value = SettingsManager.Instance.currentMusic;
             if (sfxSlider != null) sfxSlider.value = SettingsManager.Instance.currentSFX;
             if (fullscreenToggle != null) fullscreenToggle.isOn = SettingsManager.Instance.currentFullscreen;
+            if (sensitivitySlider != null) sensitivitySlider.value = SettingsManager.Instance.currentSensitivity;
             
             isUpdatingUI = false; // Desbloqueamos el envío de datos
         }
@@ -52,5 +54,11 @@ public class SettingsMenuUI : MonoBehaviour
     {
         if (!isUpdatingUI && SettingsManager.Instance != null) 
             SettingsManager.Instance.SetFullscreen(isFullscreen);
+    }
+
+    public void OnSensitivityChanged(float value)
+    {
+        if (!isUpdatingUI && SettingsManager.Instance != null) 
+            SettingsManager.Instance.SetSensitivity(value);
     }
 }

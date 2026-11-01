@@ -125,20 +125,21 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void HandleMouseLook()
     {
-        // Lectura del vector 2D generado por el movimiento del ratón
+        // Obtiene el valor global si el SettingsManager existe en la escena
+        if (SettingsManager.Instance != null)
+        {
+            mouseSensitivity = SettingsManager.Instance.currentSensitivity;
+        }
+
         Vector2 lookInput = lookAction.action.ReadValue<Vector2>();
         
         float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
         float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
 
-        // Cálculo de la rotación vertical restando el movimiento del ratón
         xRotation -= mouseY;
-        // Restricción de la rotación vertical para no mirar más allá de los polos
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // Aplicación de la rotación local a la cámara (eje X)
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        // Aplicación de la rotación horizontal al cuerpo del jugador (eje Y)
         transform.Rotate(Vector3.up * mouseX);
     }
 

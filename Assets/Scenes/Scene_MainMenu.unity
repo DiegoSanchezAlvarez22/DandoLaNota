@@ -1884,6 +1884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
   audioMixer: {fileID: 24100000, guid: 46f04aa9cdf83ea4bb95a0ea371f9aad, type: 2}
+  currentSensitivity: 75
 --- !u!4 &466857915
 Transform:
   m_ObjectHideFlags: 0
@@ -3785,16 +3786,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 532743830}
   m_HandleRect: {fileID: 62014888}
   m_Direction: 0
-  m_MinValue: 0.5
-  m_MaxValue: 5
+  m_MinValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1270739163}
         m_TargetAssemblyTypeName: SettingsMenuUI, Assembly-CSharp
-        m_MethodName: OnSFXVolumeChanged
+        m_MethodName: OnSensitivityChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4909,6 +4910,7 @@ MonoBehaviour:
   masterSlider: {fileID: 1838114917}
   musicSlider: {fileID: 11856194}
   sfxSlider: {fileID: 688006511}
+  sensitivitySlider: {fileID: 961850708}
   fullscreenToggle: {fileID: 668092514}
 --- !u!1 &1307879134
 GameObject:
