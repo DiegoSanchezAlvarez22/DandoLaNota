@@ -123,7 +123,7 @@ MonoBehaviour:
   puntosJugar: 5000
   puntosLlamar: 7000
   puntosProyector: 10000
-  tonoLlamada: {fileID: 8300000, guid: 8d6b689bd91493a42b55cca086aa9e91, type: 3}
+  tonoLlamada: {fileID: 8300000, guid: f283e18e1c959004ab117d1329e918bb, type: 3}
   nombreObjetoProyector: Canvas_Proyector
 --- !u!65 &5512350339888978485
 BoxCollider:
