@@ -1167,6 +1167,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 98861839}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 98861841}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &98861834 stripped
 GameObject:
@@ -1255,6 +1258,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_04
+--- !u!136 &98861841
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98861838}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &104515738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +1791,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 162991163}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 162991165}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &162991158 stripped
 GameObject:
@@ -1853,6 +1882,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_18
+--- !u!136 &162991165
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162991162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &186858385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,6 +2401,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 228257952}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228257954}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &228257947 stripped
 GameObject:
@@ -2446,6 +2501,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 0
   nombreObjetivo: Pared
+--- !u!136 &228257954
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228257950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &232190512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,6 +3265,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 294618726}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 294618728}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &294618721 stripped
 GameObject:
@@ -3275,6 +3356,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_01
+--- !u!136 &294618728
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294618725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &318703733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4105,6 +4209,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 344606321}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344606323}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &344606316 stripped
 GameObject:
@@ -4193,6 +4300,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_11
+--- !u!136 &344606323
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344606320}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1001 &348538452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4317,6 +4447,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 348538458}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 348538460}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &348538453 stripped
 GameObject:
@@ -4405,6 +4538,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_17
+--- !u!136 &348538460
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348538457}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &364137233
 GameObject:
   m_ObjectHideFlags: 0
@@ -5847,6 +6003,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 569913920}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 569913922}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &569913915 stripped
 GameObject:
@@ -5935,6 +6094,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_13
+--- !u!136 &569913922
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569913919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1001 &572401228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8971,6 +9153,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 826173217}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 826173219}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &826173212 stripped
 GameObject:
@@ -9059,6 +9244,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_02
+--- !u!136 &826173219
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826173216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &832291784
 GameObject:
   m_ObjectHideFlags: 0
@@ -11563,6 +11771,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1165630937}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1165630939}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1165630932 stripped
 GameObject:
@@ -11651,6 +11862,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_15
+--- !u!136 &1165630939
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165630936}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &1206170448
 GameObject:
   m_ObjectHideFlags: 0
@@ -12415,6 +12649,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1274695282}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1274695284}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1274695277 stripped
 GameObject:
@@ -12503,6 +12740,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_06
+--- !u!136 &1274695284
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274695281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1001 &1281804471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13571,6 +13831,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1382056040}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1382056042}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1382056035 stripped
 GameObject:
@@ -13659,6 +13922,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_16
+--- !u!136 &1382056042
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382056039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1001 &1397437869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13763,6 +14049,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1397437875}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1397437877}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1397437870 stripped
 GameObject:
@@ -13851,6 +14140,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_05
+--- !u!136 &1397437877
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397437874}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &1408439760
 GameObject:
   m_ObjectHideFlags: 0
@@ -16051,6 +16363,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1623967339}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1623967341}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1623967334 stripped
 GameObject:
@@ -16139,6 +16454,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_09
+--- !u!136 &1623967341
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623967338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &1632193972
 GameObject:
   m_ObjectHideFlags: 0
@@ -17017,6 +17355,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1728549238}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1728549240}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1728549233 stripped
 GameObject:
@@ -17105,6 +17446,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_12
+--- !u!136 &1728549240
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728549237}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1001 &1765706442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17209,6 +17573,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1765706448}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1765706450}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1765706443 stripped
 GameObject:
@@ -17297,6 +17664,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_19
+--- !u!136 &1765706450
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765706447}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &1770928876
 GameObject:
   m_ObjectHideFlags: 0
@@ -17468,6 +17858,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1780969687}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1780969689}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1780969682 stripped
 GameObject:
@@ -17556,6 +17949,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_10
+--- !u!136 &1780969689
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780969686}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &1788793060
 GameObject:
   m_ObjectHideFlags: 0
@@ -18495,6 +18911,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1913031884}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1913031886}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1913031879 stripped
 GameObject:
@@ -18583,6 +19002,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_20
+--- !u!136 &1913031886
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913031883}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1001 &1929721160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18683,6 +19125,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1929721166}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1929721168}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &1929721161 stripped
 GameObject:
@@ -18771,6 +19216,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_03
+--- !u!136 &1929721168
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929721165}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &1931924987
 GameObject:
   m_ObjectHideFlags: 0
@@ -19869,6 +20337,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2075919357}
+    - targetCorrespondingSourceObject: {fileID: -4370111678170979691, guid: d7e5f079394d2694da39499c3747559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2075919359}
   m_SourcePrefab: {fileID: 100100000, guid: d7e5f079394d2694da39499c3747559c, type: 3}
 --- !u!1 &2075919352 stripped
 GameObject:
@@ -19957,6 +20428,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrankTarget
   tipo: 1
   nombreObjetivo: Alumno_14
+--- !u!136 &2075919359
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075919356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006388079
+  m_Height: 0.033099823
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.3487749e-17, z: -0.0073661986}
 --- !u!1 &2088254997
 GameObject:
   m_ObjectHideFlags: 0
@@ -20379,7 +20873,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4d19c20a5090e1f4e8ee2ac2bdb71f72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d97ea45efa2b8c45b5bf941ec8f4b04, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
