@@ -29,6 +29,7 @@ public class TeacherAI : MonoBehaviour
     [Header("Configuración de Caída (Zancadilla)")]
     [Tooltip("Tiempo total que duran las animaciones de caerse y levantarse")]
     [SerializeField] private float tiempoRecuperacionCaida = 4f;
+    [SerializeField] private AudioClip sonidoEnfado;
 
 
     // Variables cabeza roja profesor
@@ -285,10 +286,16 @@ public class TeacherAI : MonoBehaviour
     public void GetHitByObject()
     {
         if (risas != null) AudioSource.PlayClipAtPoint(risas, transform.position);
+        Invoke(nameof(SonarEnfado), 1.5f);
 
         if (matCabeza == null) return;
         if (cabezaRoutine != null) StopCoroutine(cabezaRoutine);
         cabezaRoutine = StartCoroutine(CabezaRojaRoutine());
+    }
+
+    private void SonarEnfado()
+    {
+        if (sonidoEnfado != null) AudioSource.PlayClipAtPoint(sonidoEnfado, transform.position);
     }
 
     private IEnumerator CabezaRojaRoutine()
@@ -335,6 +342,8 @@ public class TeacherAI : MonoBehaviour
             exclamationMarkIcon.transform.localPosition = p;
         }
     }
+
+
 
 
 

@@ -21302,6 +21302,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: sonidoEnfado
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c601491e4303ae45b2333db413ed0b3, type: 3}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
       propertyPath: eyesTransform
       value: 
       objectReference: {fileID: 4842945863215174230}
