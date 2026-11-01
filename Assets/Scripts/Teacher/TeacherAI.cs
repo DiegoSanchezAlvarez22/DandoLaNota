@@ -166,7 +166,7 @@ public class TeacherAI : MonoBehaviour
                 float distance = Vector3.Distance(eyesTransform.position, puntoMiraJugador);
 
                 bool estaEnCono = angle < viewAngle / 2f;
-                bool estaMuyCerca = distance <= 1.5f; // A metro y medio te pilla aunque no te mire directamente
+                bool estaMuyCerca = distance <= 0.5f; // A metro y medio te pilla aunque no te mire directamente
 
                 if (estaEnCono || estaMuyCerca)
                 {
