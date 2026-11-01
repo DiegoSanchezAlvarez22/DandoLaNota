@@ -5727,7 +5727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sensibilidad del rat\xF3n"
+  m_text: Sensibilidad del raton
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8011b0a20b0ab164b90bcef1ea048cd0, type: 2}
   m_sharedMaterial: {fileID: 346368170204486055, guid: 8011b0a20b0ab164b90bcef1ea048cd0, type: 2}
