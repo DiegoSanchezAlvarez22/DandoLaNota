@@ -1,36 +1,95 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-// Fíjate que hereda de PrankItem, no de MonoBehaviour. ¡Ya incluye toda la lógica base!
 public class ThrowablePrankItem : PrankItem
 {
-    [Header("Ajustes de Lanzamiento")]
-    [SerializeField] private float fuerzaLanzamiento = 15f;
-    [Tooltip("Tiempo antes de que el objeto desaparezca del suelo tras tirarlo")]
-    [SerializeField] private float tiempoDeVidaTrasLanzar = 4f; 
+    [Header("Lanzamiento con carga")]
+    [SerializeField] private float tiempoCargaMax = 1.2f;   // segundos hasta carga completa
+    [SerializeField] private float velocidadMinima = 4f;    // m/s con carga mínima
+    [SerializeField] private float velocidadMaxima = 14f;   // m/s con carga completa
+    [SerializeField] private float tiempoDeVidaTrasLanzar = 4f;
 
-    protected override void AccionFinalExitosa()
+    [Header("Barra de carga (opcional)")]
+    [SerializeField] private string nombreBarraCarga = "Img_CargaLanzamiento";
+
+    private bool cargando;
+    private float carga;
+    private Image barra;
+
+    public override string GetInteractPrompt()
     {
-        // 1. Damos los puntos y guardamos el logro al momento de soltarlo
+        if (!isHeld) return base.GetInteractPrompt();
+        return "[Clic] Mantén para cargar, suelta para lanzar\n[Q] Soltar";
+    }
+
+    public override void OnInteract(PlayerInteraction player)
+    {
+        // Solo recoger; ya no hay minijuego
+        if (!isHeld)
+        {
+            base.OnInteract(player);
+            currentPlayer = player;
+        }
+    }
+
+    private void Update()
+    {
+        if (!isHeld || currentPlayer == null || currentPlayer.IsFrozen
+            || Time.timeScale == 0f || Mouse.current == null)
+        {
+            if (cargando) CancelarCarga();
+            return;
+        }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            cargando = true;
+            carga = 0f;
+        }
+
+        if (!cargando) return;
+
+        carga = Mathf.Clamp01(carga + Time.deltaTime / tiempoCargaMax);
+        ActualizarBarra(carga, true);
+
+        if (Mouse.current.leftButton.wasReleasedThisFrame) Lanzar();
+    }
+
+    private void Lanzar()
+    {
+        float velocidad = Mathf.Lerp(velocidadMinima, velocidadMaxima, carga);
+        CancelarCarga();
+
         if (AchievementManager.Instance != null && prankData != null)
-        {
             AchievementManager.Instance.UnlockPrank(prankData.id);
-        }
-        
         if (GameManager.Instance != null)
-        {
             GameManager.Instance.AddLaughPoints(pointsAwarded);
-        }
 
-        // 2. Calculamos la dirección usando la cámara del jugador (hacia donde miras)
-        Vector3 direccion = currentPlayer.GetPlayerCamera().forward * fuerzaLanzamiento;
+        float masa = itemRigidbody != null ? itemRigidbody.mass : 1f;
+        Vector3 impulso = currentPlayer.GetPlayerCamera().forward * velocidad * masa;
 
-        // 3. Limpiamos la mano virtualmente para que puedas coger otra cosa
         currentPlayer.ClearHand();
-
-        // 4. Lanzamos el objeto físicamente reutilizando la función Drop de la clase padre
-        Drop(direccion);
-
-        // 5. Lo destruimos tras unos segundos para que la clase no se llene de basura acumulada
+        Drop(impulso);
         Destroy(gameObject, tiempoDeVidaTrasLanzar);
+    }
+
+    private void CancelarCarga()
+    {
+        cargando = false;
+        carga = 0f;
+        ActualizarBarra(0f, false);
+    }
+
+    private void ActualizarBarra(float valor, bool visible)
+    {
+        if (barra == null)
+        {
+            GameObject go = GameObject.Find(nombreBarraCarga);
+            if (go != null) barra = go.GetComponent<Image>();
+        }
+        if (barra == null) return;
+        barra.fillAmount = valor;
+        barra.enabled = visible;
     }
 }
