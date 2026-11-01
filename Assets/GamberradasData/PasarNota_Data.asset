@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Pasar Nota
   minigameType: 1
   dificultad: 0
-  tiempoEjecucionBase: 3
+  tiempoEjecucionBase: 0.75
   punishmentPoints: 700
   penalizacionPorFallo: 1
   tiempoPenalizacion: 2

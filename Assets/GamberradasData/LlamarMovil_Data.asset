@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Llamar Movil
   minigameType: 2
   dificultad: 1
-  tiempoEjecucionBase: 5
+  tiempoEjecucionBase: 2.5
   punishmentPoints: 3500
   penalizacionPorFallo: 1
   tiempoPenalizacion: 2

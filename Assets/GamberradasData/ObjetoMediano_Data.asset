@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Lanzar Objeto II
   minigameType: 0
   dificultad: 0
-  tiempoEjecucionBase: 4
+  tiempoEjecucionBase: 2
   punishmentPoints: 4000
   penalizacionPorFallo: 0
   tiempoPenalizacion: 4

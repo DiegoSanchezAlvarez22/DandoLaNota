@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Lanzar Objeto III
   minigameType: 0
   dificultad: 2
-  tiempoEjecucionBase: 6
+  tiempoEjecucionBase: 3
   punishmentPoints: 6000
   penalizacionPorFallo: 0
   tiempoPenalizacion: 6

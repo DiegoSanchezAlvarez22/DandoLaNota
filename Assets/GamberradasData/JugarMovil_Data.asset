@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Jugar Movil
   minigameType: 2
   dificultad: 1
-  tiempoEjecucionBase: 10
+  tiempoEjecucionBase: 6
   punishmentPoints: 2500
   penalizacionPorFallo: 1
   tiempoPenalizacion: 2

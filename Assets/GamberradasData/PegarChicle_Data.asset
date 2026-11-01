@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Pegar Chicle
   minigameType: 1
   dificultad: 1
-  tiempoEjecucionBase: 2
+  tiempoEjecucionBase: 1
   punishmentPoints: 2500
   penalizacionPorFallo: 0
   tiempoPenalizacion: 2

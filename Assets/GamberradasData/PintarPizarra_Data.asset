@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Pintar Pizarra
   minigameType: 0
   dificultad: 1
-  tiempoEjecucionBase: 5
+  tiempoEjecucionBase: 1.5
   punishmentPoints: 2500
   penalizacionPorFallo: 0
   tiempoPenalizacion: 3

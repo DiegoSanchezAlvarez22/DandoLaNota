@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Ordenador Profesor
   minigameType: 1
   dificultad: 0
-  tiempoEjecucionBase: 1
+  tiempoEjecucionBase: 0.5
   punishmentPoints: 1500
   penalizacionPorFallo: 1
   tiempoPenalizacion: 2

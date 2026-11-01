@@ -16,7 +16,7 @@ MonoBehaviour:
   prankName: Encender Proyector
   minigameType: 1
   dificultad: 1
-  tiempoEjecucionBase: 3
+  tiempoEjecucionBase: 1.5
   punishmentPoints: 4000
   penalizacionPorFallo: 1
   tiempoPenalizacion: 2

@@ -16,10 +16,10 @@ MonoBehaviour:
   prankName: Lanzar Bola Papel
   minigameType: 0
   dificultad: 0
-  tiempoEjecucionBase: 3
+  tiempoEjecucionBase: 1
   punishmentPoints: 1000
   penalizacionPorFallo: 1
-  tiempoPenalizacion: 2
+  tiempoPenalizacion: 1
   sonidoPenalizacion: {fileID: 0}
   icon: {fileID: 1390776984874800587, guid: f2ffb8ecdfc96a643a0f8ef46c88687d, type: 3}
   demoVideo: {fileID: 0}
