@@ -21626,6 +21626,10 @@ PrefabInstance:
       value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 5617415015308590497, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
+      propertyPath: tonoLlamada
+      value: 
+      objectReference: {fileID: 8300000, guid: f283e18e1c959004ab117d1329e918bb, type: 3}
+    - target: {fileID: 5617415015308590497, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
       propertyPath: puntosLlamar
       value: 4000
       objectReference: {fileID: 0}
@@ -21894,6 +21898,10 @@ PrefabInstance:
       propertyPath: viewRadius
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: sonidoError
+      value: 
+      objectReference: {fileID: 8300000, guid: a537687d66ce23749bb6dc2399e714f6, type: 3}
     - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
       propertyPath: sonidoEnfado
       value: 

@@ -56,6 +56,15 @@ public class EnvironmentPrank : MonoBehaviour, IInteractable
     private IEnumerator EjecutarTension(bool qteExito, PlayerInteraction player)
     {
         // 1. Congelamos al jugador
+        if (!qteExito)
+        {
+            player.UpdateActionTimer(0);
+
+            TeacherAI profe = FindFirstObjectByType<TeacherAI>();
+            if (profe != null) profe.PillarPorFallo(player);
+
+            yield break;
+        }
         player.SetFrozen(true);
         float tiempoTotal = prankData.tiempoEjecucionBase;
 

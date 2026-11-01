@@ -94,6 +94,18 @@ public class PrankItem : MonoBehaviour, IInteractable
     {
         if (currentPlayer == null || prankData == null) yield break;
 
+        if (!qteExito)
+        {
+            currentPlayer.UpdateActionTimer(0);
+            currentPlayer.ClearHand();
+
+            TeacherAI profe = FindFirstObjectByType<TeacherAI>();
+            if (profe != null) profe.PillarPorFallo(currentPlayer);
+
+            Destroy(gameObject);
+            yield break;
+        }
+
         currentPlayer.SetFrozen(true);
         float tiempoTotal = prankData.tiempoEjecucionBase;
 

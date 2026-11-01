@@ -30,6 +30,7 @@ public class TeacherAI : MonoBehaviour
     [Tooltip("Tiempo total que duran las animaciones de caerse y levantarse")]
     [SerializeField] private float tiempoRecuperacionCaida = 4f;
     [SerializeField] private AudioClip sonidoEnfado;
+    [SerializeField] private AudioClip sonidoError;
 
 
     // Variables cabeza roja profesor
@@ -230,6 +231,14 @@ public class TeacherAI : MonoBehaviour
         }
 
         GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, puntosDeLaGamberrada);
+    }
+
+    public void PillarPorFallo(PlayerInteraction player)
+    {
+        if (sonidoError != null) AudioSource.PlayClipAtPoint(sonidoError, player.transform.position);
+
+        StudentIdentity identity = player.GetComponentInParent<StudentIdentity>();
+        if (identity != null) CatchStudent(identity, player);
     }
 
     public void TripOver()
