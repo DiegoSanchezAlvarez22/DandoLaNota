@@ -124,35 +124,31 @@ public class TeacherAI : MonoBehaviour
                 float angle = Vector3.Angle(eyesTransform.forward, directionToTarget);
                 float distance = Vector3.Distance(eyesTransform.position, puntoMiraJugador);
 
-                // === SOLUCIÓN: Detección por cono visual O por contacto/proximidad ===
                 bool estaEnCono = angle < viewAngle / 2f;
                 bool estaMuyCerca = distance <= 1.5f; // A metro y medio te pilla aunque no te mire directamente
 
                 if (estaEnCono || estaMuyCerca)
                 {
-                    if (!Physics.Raycast(eyesTransform.position, directionToTarget, distance, obstacleMask))
+                    if (playerDetectado.IsFrozen)
                     {
-                        if (playerDetectado.IsFrozen)
-                        {
-                            Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista o por proximidad.");
-                            
-                            PrankItem[] items = FindObjectsOfType<PrankItem>();
-                            foreach (var item in items) item.StopAllCoroutines();
-                            
-                            EnvironmentPrank[] entornos = FindObjectsOfType<EnvironmentPrank>();
-                            foreach (var entorno in entornos) entorno.StopAllCoroutines();
+                        Debug.LogError("[¡PILLADO!] Gamberrada detectada a plena vista o por proximidad.");
+                        
+                        PrankItem[] items = FindObjectsOfType<PrankItem>();
+                        foreach (var item in items) item.StopAllCoroutines();
+                        
+                        EnvironmentPrank[] entornos = FindObjectsOfType<EnvironmentPrank>();
+                        foreach (var entorno in entornos) entorno.StopAllCoroutines();
 
-                            PrankItem objetoEnMano = playerDetectado.GetComponentInChildren<PrankItem>();
-                            if (objetoEnMano != null) objetoEnMano.Drop(Vector3.zero);
+                        StudentIdentity identity = playerDetectado.GetComponentInParent<StudentIdentity>();
+                        if (identity != null) CatchStudent(identity, playerDetectado);
 
-                            StudentIdentity identity = playerDetectado.GetComponentInParent<StudentIdentity>();
-                            if (identity != null) CatchStudent(identity, playerDetectado);
-                            
-                            playerDetectado.ClearHand();
-                            playerDetectado.UpdateActionTimer(0);
-                            
-                            return; 
-                        }
+                        PrankItem objetoEnMano = playerDetectado.GetComponentInChildren<PrankItem>();
+                        if (objetoEnMano != null) objetoEnMano.Drop(Vector3.zero);
+                        
+                        playerDetectado.ClearHand();
+                        playerDetectado.UpdateActionTimer(0);
+                        
+                        return; 
                     }
                 }
             }

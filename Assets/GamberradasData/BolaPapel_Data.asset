@@ -22,4 +22,4 @@ MonoBehaviour:
   tiempoPenalizacion: 1
   sonidoPenalizacion: {fileID: 0}
   icon: {fileID: 1390776984874800587, guid: f2ffb8ecdfc96a643a0f8ef46c88687d, type: 3}
-  demoVideo: {fileID: 0}
+  demoVideo: {fileID: 32900000, guid: 418d4cce82b22924ebe1550f9402314a, type: 3}
