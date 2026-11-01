@@ -19140,6 +19140,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: risas
+      value: 
+      objectReference: {fileID: 8300000, guid: f87174d2d78c3a345be7378ea48bbb79, type: 3}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 4842945863215174231}

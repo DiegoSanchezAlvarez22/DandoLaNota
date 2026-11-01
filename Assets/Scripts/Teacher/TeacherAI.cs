@@ -43,6 +43,7 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private float tiempoCabezaRoja = 2f;
     [Tooltip("Segundos que tarda en volver al color normal")]
     [SerializeField] private float tiempoVolverNormal = 1f;
+    [SerializeField] private AudioClip risas;
 
 
     private Material matCabeza;
@@ -283,6 +284,8 @@ public class TeacherAI : MonoBehaviour
 
     public void GetHitByObject()
     {
+        if (risas != null) AudioSource.PlayClipAtPoint(risas, transform.position);
+
         if (matCabeza == null) return;
         if (cabezaRoutine != null) StopCoroutine(cabezaRoutine);
         cabezaRoutine = StartCoroutine(CabezaRojaRoutine());
