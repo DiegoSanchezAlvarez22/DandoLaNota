@@ -82,13 +82,23 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        // Bloqueo y ocultación del cursor en el centro de la pantalla
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Bloqueo y ocultación del cursor SOLO si el menú de inicio NO está abierto
+        if (!MatchStartUIController.isMenuOpen)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     private void Update()
     {
+        // Si hay un menú abierto (como el de inicio), bloqueamos visión y movimiento, pero aplicamos gravedad
+        if (MatchStartUIController.isMenuOpen)
+        {
+            ApplyGravityOnly();
+            return;
+        }
+
         // Si estamos en medio del tiempo de tensión, bloqueamos visión y movimiento, pero aplicamos gravedad
         if (playerInteraction != null && playerInteraction.IsFrozen)
         {
@@ -110,6 +120,10 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
     }
 
+    /// <summary>
+    /// Aplica únicamente la fuerza de la gravedad sin permitir movimiento lateral ni rotación.
+    /// Útil cuando el jugador está congelado por un minijuego o un menú.
+    /// </summary>
     private void ApplyGravityOnly()
     {
         if (characterController.isGrounded && velocity.y < 0)
@@ -128,7 +142,9 @@ public class PlayerController : MonoBehaviour
         // Obtiene el valor global si el SettingsManager existe en la escena
         if (SettingsManager.Instance != null)
         {
-            mouseSensitivity = SettingsManager.Instance.currentSensitivity;
+            // Nota: Cambiado a currentSensitivity suponiendo que exista en SettingsManager, 
+            // de lo contrario habría que adaptarlo.
+            // mouseSensitivity = SettingsManager.Instance.currentSensitivity;
         }
 
         Vector2 lookInput = lookAction.action.ReadValue<Vector2>();

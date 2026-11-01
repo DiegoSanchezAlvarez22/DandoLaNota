@@ -3,6 +3,10 @@ using TMPro;
 
 public class MatchStartUIController : MonoBehaviour
 {
+    // === SEMÁFORO GLOBAL PARA EL RATÓN ===
+    // Avisa a otros scripts (como PlayerController) si hay un menú activo
+    public static bool isMenuOpen = false;
+
     [Header("Interfaz de Inicio")]
     // Referencia al panel oscuro que bloquea la pantalla al inicio
     [SerializeField] private GameObject startPanel;
@@ -12,6 +16,9 @@ public class MatchStartUIController : MonoBehaviour
 
     private void Start()
     {
+        // Activamos el semáforo para que el jugador sepa que no debe bloquear el ratón
+        isMenuOpen = true;
+
         // Se asegura de que el panel se muestre nada más cargar la escena
         if (startPanel != null) startPanel.SetActive(true);
 
@@ -20,14 +27,19 @@ public class MatchStartUIController : MonoBehaviour
         {
             nameInputField.text = PlayerPrefs.GetString("PlayerName");
         }
+
+        // Muestra y libera el cursor para poder usar los menús con libertad
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     /// <summary>
-    /// Guarda el nombre, lo envía al servidor y da comienzo a la partida
-    /// Invocado por el botón "Empezar Clase" en la interfaz
+    /// Guarda el nombre, lo envía al servidor y da comienzo a la partida.
+    /// Invocado por el botón "Empezar Clase" en la interfaz.
     /// </summary>
     public void ConfirmNameAndStart()
     {
+        // Validación para evitar que el jugador intente entrar con el nombre vacío
         if (nameInputField == null || string.IsNullOrEmpty(nameInputField.text)) return;
 
         string playerName = nameInputField.text;
@@ -39,9 +51,7 @@ public class MatchStartUIController : MonoBehaviour
             PlayerPrefs.SetString("PlayerName", playerName);
             PlayerPrefs.Save();
 
-            // Ocultar panel
-            if (startPanel != null) startPanel.SetActive(false);
-            if (startPanel != null) startPanel.SetActive(false);
+            // Ocultar panel de inicio
             if (startPanel != null) startPanel.SetActive(false);
 
             // Reanudar tiempo
@@ -49,6 +59,13 @@ public class MatchStartUIController : MonoBehaviour
             {
                 GameManager.Instance.BeginMatchTimer();
             }
+
+            // Apagamos el semáforo para avisar de que ya no hay menús estorbando
+            isMenuOpen = false;
+
+            // Devolvemos el control de la cámara al jugador y ocultamos el ratón
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         });
     }
 }
