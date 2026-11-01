@@ -14,6 +14,9 @@ public class TeacherPunishment : MonoBehaviour
     [Tooltip("Distancia a la que se detiene el profesor respecto al alumno para que se vea bien la animación")]
     [SerializeField] private float distanciaDetencion = 1.8f;
 
+    [SerializeField] private int pilladasMaximas = 3;
+    private int pilladasJugador = 0;
+
     [Header("Animaciones")]
     [SerializeField] private Animator animator;
 
@@ -43,14 +46,14 @@ public class TeacherPunishment : MonoBehaviour
             if (playerInt == null) playerInt = student.GetComponentInParent<PlayerInteraction>();
             if (playerInt != null) playerInt.SetFrozen(true);
         }
-
+        if (student.IsPlayer()) pilladasJugador++;
         StartCoroutine(ScoldRoutine(student));
     }
 
     private IEnumerator ScoldRoutine(StudentIdentity student)
     {
         agent.isStopped = false;
-        
+
         // Configuramos la distancia de parada del agente para que frene antes de chocar contigo
         agent.stoppingDistance = distanciaDetencion;
         agent.SetDestination(student.transform.position);
@@ -68,20 +71,24 @@ public class TeacherPunishment : MonoBehaviour
         // El profesor se detiene y te mira a la cara
         agent.isStopped = true;
         if (animator != null) animator.SetBool("IsWalking", false);
-        
+
         Vector3 lookPosition = new Vector3(student.transform.position.x, transform.position.y, student.transform.position.z);
         transform.LookAt(lookPosition);
 
         // Comienza la animación de enfado en bucle
-        if (animator != null) 
+        if (animator != null)
         {
             animator.SetBool("IsScolding", true);
         }
 
-        if (student.GetPunishmentPoints() >= expulsionThreshold)
+        bool expulsar = student.IsPlayer()
+    ? pilladasJugador >= pilladasMaximas
+    : student.GetPunishmentPoints() >= expulsionThreshold;
+
+        if (expulsar)
         {
             yield return new WaitForSeconds(expulsionAnimationDelay);
-            
+
             if (student.IsPlayer() && GameManager.Instance != null)
                 GameManager.Instance.EndMatch(true);
             else
@@ -94,7 +101,7 @@ public class TeacherPunishment : MonoBehaviour
         {
             // El profesor te echa la bronca durante exactamente 1.5 segundos
             yield return new WaitForSeconds(1.5f);
-            
+
             // DEVOLVER EL MOVIMIENTO: Al acabar la regañina, liberamos al jugador
             if (student.IsPlayer())
             {
