@@ -26,6 +26,8 @@ public class TeacherAI : MonoBehaviour
     [SerializeField] private Transform eyesTransform;
     [SerializeField] private LayerMask obstacleMask;
 
+    [SerializeField] private float multiplicadorCastigo = 1.5f;
+
     [Header("Configuración de Caída (Zancadilla)")]
     [Tooltip("Tiempo total que duran las animaciones de caerse y levantarse")]
     [SerializeField] private float tiempoRecuperacionCaida = 4f;
@@ -224,11 +226,12 @@ public class TeacherAI : MonoBehaviour
         if (exclamationMarkIcon != null) exclamationMarkIcon.SetActive(true);
 
         // Obtenemos los puntos directamente del ScriptableObject de la jugarreta actual, o 25 por defecto
-        int puntosDeLaGamberrada = 25;
+        int puntosDeLaGamberrada = 500;
         if (playerInvolucrado != null && playerInvolucrado.CurrentPrankData != null)
         {
             puntosDeLaGamberrada = playerInvolucrado.CurrentPrankData.punishmentPoints;
         }
+        puntosDeLaGamberrada = Mathf.RoundToInt(puntosDeLaGamberrada * multiplicadorCastigo);
 
         GetComponent<TeacherPunishment>().PunishStudent(guiltyStudent, puntosDeLaGamberrada);
     }

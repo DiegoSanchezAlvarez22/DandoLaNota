@@ -87,6 +87,7 @@ public class PrankItem : MonoBehaviour, IInteractable
 
     protected void OnMinigameResult(bool success)
     {
+        if (this == null || currentPlayer == null) return;
         StartCoroutine(EjecutarGamberradaRutina(success));
     }
 

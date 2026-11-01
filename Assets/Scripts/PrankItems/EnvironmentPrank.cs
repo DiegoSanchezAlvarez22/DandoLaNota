@@ -50,6 +50,7 @@ public class EnvironmentPrank : MonoBehaviour, IInteractable
 
     private void OnMinigameResult(bool qteExito, PlayerInteraction player)
     {
+        if (this == null) return;
         StartCoroutine(EjecutarTension(qteExito, player));
     }
 
