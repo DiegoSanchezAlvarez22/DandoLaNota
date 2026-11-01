@@ -99,14 +99,15 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // Si estamos en medio del tiempo de tensión, bloqueamos visión y movimiento, pero aplicamos gravedad
+        // 1. Manejamos siempre la visión (si no hay menús abiertos) para poder mirar durante el castigo
+        HandleMouseLook();
+
+        // 2. Si estamos en medio del tiempo de castigo/tensión, bloqueamos el movimiento corporal, pero aplicamos gravedad
         if (playerInteraction != null && playerInteraction.IsFrozen)
         {
             ApplyGravityOnly(); 
             return; 
         }
-
-        HandleMouseLook();
 
         if (isSeated)
         {
@@ -117,12 +118,13 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        // 3. Manejamos el movimiento lateral solo si no estamos congelados ni sentados
         HandleMovement();
     }
 
     /// <summary>
-    /// Aplica únicamente la fuerza de la gravedad sin permitir movimiento lateral ni rotación.
-    /// Útil cuando el jugador está congelado por un minijuego o un menú.
+    /// Aplica únicamente la fuerza de la gravedad sin permitir movimiento lateral.
+    /// Útil cuando el jugador está congelado por un minijuego, menú o castigo.
     /// </summary>
     private void ApplyGravityOnly()
     {
