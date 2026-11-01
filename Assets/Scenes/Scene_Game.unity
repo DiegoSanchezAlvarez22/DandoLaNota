@@ -1588,9 +1588,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 545a66e34bf04e944bc31ae7ff4ee57f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -21468,7 +21468,7 @@ PrefabInstance:
       objectReference: {fileID: 2106986755}
     - target: {fileID: 3637601688087266447, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
       propertyPath: mouseSensitivity
-      value: 80
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3851227248318773498, guid: 01e89f006759a094bab7e8d76c7630c2, type: 3}
       propertyPath: m_LocalPosition.x
