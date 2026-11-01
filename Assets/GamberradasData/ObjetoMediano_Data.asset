@@ -18,7 +18,7 @@ MonoBehaviour:
   dificultad: 0
   tiempoEjecucionBase: 2
   punishmentPoints: 4000
-  penalizacionPorFallo: 0
+  penalizacionPorFallo: 1
   tiempoPenalizacion: 4
   sonidoPenalizacion: {fileID: 0}
   icon: {fileID: -7894596933202274154, guid: e3886c935868ec348b08befc58f03c9a, type: 3}
