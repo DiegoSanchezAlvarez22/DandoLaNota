@@ -717,12 +717,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83632933}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2070186, y: 1.5212328, z: -3.7993615}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.6940186, y: -0.8817673, z: -10.729362}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 782610976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &83700170
 GameObject:
@@ -7516,6 +7516,7 @@ Transform:
   - {fileID: 235646269}
   - {fileID: 1691162874}
   - {fileID: 1436573746}
+  - {fileID: 83632935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &822415420
@@ -12531,7 +12532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sensibilidad del rat\xF3n"
+  m_text: Sensibilidad del raton
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8011b0a20b0ab164b90bcef1ea048cd0, type: 2}
   m_sharedMaterial: {fileID: 346368170204486055, guid: 8011b0a20b0ab164b90bcef1ea048cd0, type: 2}
@@ -18354,6 +18355,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+      propertyPath: tiempoRecuperacionCaida
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 19279936}
@@ -18521,5 +18526,4 @@ SceneRoots:
   - {fileID: 2117586192}
   - {fileID: 782610976}
   - {fileID: 1788793063}
-  - {fileID: 83632935}
   - {fileID: 152673403}

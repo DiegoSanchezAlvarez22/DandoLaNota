@@ -21,5 +21,5 @@ MonoBehaviour:
   penalizacionPorFallo: 1
   tiempoPenalizacion: 2
   sonidoPenalizacion: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: -7236928574415968719, guid: ba1fbbfd1a9056e43b36adf6c7658aa2, type: 3}
   demoVideo: {fileID: 0}
