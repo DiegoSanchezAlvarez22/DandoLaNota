@@ -1489,7 +1489,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!54 &127494587
 Rigidbody:
@@ -2267,7 +2267,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!4 &226517011 stripped
 Transform:
@@ -8814,6 +8814,10 @@ PrefabInstance:
       propertyPath: fuerzaLanzamiento
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 65056069527529111, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
+      propertyPath: tiempoDeVidaTrasLanzar
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 415875302330830466, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
       propertyPath: m_Name
       value: Pencilcase
@@ -8836,7 +8840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1048965767358960696, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.577251
+      value: -8.804
       objectReference: {fileID: 0}
     - target: {fileID: 1048965767358960696, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11270,7 +11274,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!54 &1066758912
 Rigidbody:
@@ -12890,7 +12894,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!1001 &1294829056
 PrefabInstance:
@@ -13069,7 +13073,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!1 &1320041736
 GameObject:
@@ -15111,7 +15115,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!1 &1510064089
 GameObject:
@@ -18774,6 +18778,10 @@ PrefabInstance:
       propertyPath: fuerzaLanzamiento
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 65056069527529111, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
+      propertyPath: tiempoDeVidaTrasLanzar
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 415875302330830466, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
       propertyPath: m_Name
       value: Pencilcase (1)
@@ -19471,7 +19479,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!54 &1931924993
 Rigidbody:
@@ -19773,7 +19781,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!4 &1949200039 stripped
 Transform:
@@ -21771,7 +21779,7 @@ MonoBehaviour:
   tiempoCargaMax: 1.2
   velocidadMinima: 4
   velocidadMaxima: 14
-  tiempoDeVidaTrasLanzar: 4
+  tiempoDeVidaTrasLanzar: 120
   nombreBarraCarga: Img_CargaLanzamiento
 --- !u!54 &2781033471723513537
 Rigidbody:
@@ -21816,6 +21824,10 @@ PrefabInstance:
     - target: {fileID: 65056069527529111, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
       propertyPath: fuerzaLanzamiento
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 65056069527529111, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
+      propertyPath: tiempoDeVidaTrasLanzar
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 415875302330830466, guid: 3bee4ee9c8b8fac45a90b4750952e86d, type: 3}
       propertyPath: m_Name
