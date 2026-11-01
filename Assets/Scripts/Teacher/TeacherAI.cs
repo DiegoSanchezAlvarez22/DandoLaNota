@@ -298,6 +298,11 @@ public class TeacherAI : MonoBehaviour
         if (sonidoEnfado != null) AudioSource.PlayClipAtPoint(sonidoEnfado, transform.position);
     }
 
+    public void SonarRisas()
+    {
+        if (risas != null) AudioSource.PlayClipAtPoint(risas, transform.position);
+    }
+
     private IEnumerator CabezaRojaRoutine()
     {
 

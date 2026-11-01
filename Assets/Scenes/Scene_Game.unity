@@ -7577,6 +7577,17 @@ RectTransform:
   m_AnchoredPosition: {x: 4.151, y: -0.494}
   m_SizeDelta: {x: 356.4, y: 404.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &683319156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 730205108144406162, guid: 1b3e7a06ec41ecb4a9e45abe55aa3d5f, type: 3}
+  m_PrefabInstance: {fileID: 4842945863215174229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842945863215174234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f06562afd37fd945ad798d5ee103c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeacherAI
 --- !u!1 &692775361
 GameObject:
   m_ObjectHideFlags: 0
@@ -11559,6 +11570,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 683319156}
+        m_TargetAssemblyTypeName: TeacherAI, Assembly-CSharp
+        m_MethodName: SonarRisas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19279,8 +19302,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02, y: 0.02, z: 0.25213996}
-  m_Center: {x: 0, y: 0, z: -0.11606997}
+  m_Size: {x: 0.020000003, y: 0.020000003, z: 0.115660146}
+  m_Center: {x: -4.0806893e-19, y: -1.1776067e-17, z: -0.04783006}
 --- !u!23 &1931924989
 MeshRenderer:
   m_ObjectHideFlags: 0

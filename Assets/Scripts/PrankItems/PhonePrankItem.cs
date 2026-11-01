@@ -146,6 +146,9 @@ public class PhonePrankItem : PrankItem
         {
             proyector.transform.GetChild(0).gameObject.SetActive(true);
             Debug.Log("¡Imagen subida al proyector!");
+
+            TeacherAI profesor = FindFirstObjectByType<TeacherAI>();
+            if (profesor != null) profesor.SonarRisas();
         }
         else
         {
