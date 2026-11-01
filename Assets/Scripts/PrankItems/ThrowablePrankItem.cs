@@ -17,6 +17,11 @@ public class ThrowablePrankItem : PrankItem
     private float carga;
     private Image barra;
 
+    private bool lanzado;           // NUEVO
+    private bool golpeoProfesor;    // NUEVO
+
+    public bool Cargando => cargando;   // NUEVO
+
     public override string GetInteractPrompt()
     {
         if (!isHeld) return base.GetInteractPrompt();
@@ -70,8 +75,23 @@ public class ThrowablePrankItem : PrankItem
         Vector3 impulso = currentPlayer.GetPlayerCamera().forward * velocidad * masa;
 
         currentPlayer.ClearHand();
+        lanzado = true;             // NUEVO
         Drop(impulso);
         Destroy(gameObject, tiempoDeVidaTrasLanzar);
+    }
+
+    // NUEVO: si la bola lanzada toca al profesor, reacciona
+    private void OnCollisionEnter(Collision c)
+    {
+        Debug.Log("Bola choca con: " + c.collider.name + " | lanzado: " + lanzado);
+
+        if (!lanzado || golpeoProfesor) return;
+
+        TeacherAI profe = c.collider.GetComponentInParent<TeacherAI>();
+        if (profe == null) return;
+
+        golpeoProfesor = true;
+        profe.GetHitByObject();
     }
 
     private void CancelarCarga()
