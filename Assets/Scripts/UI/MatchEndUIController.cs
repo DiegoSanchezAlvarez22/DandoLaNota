@@ -37,6 +37,9 @@ public class MatchEndUIController : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         // Ocultación de la pantalla de resultados al iniciar la escena
         if (endMatchCanvas != null)
         {

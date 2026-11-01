@@ -83,7 +83,18 @@ public class SettingsManager : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         currentFullscreen = isFullscreen;
-        Screen.fullScreen = isFullscreen;
+        
+        if (isFullscreen)
+        {
+            // Pantalla completa: detecta la resolución nativa del monitor para llenarlo sin estirar la imagen
+            Resolution resolucionNativa = Screen.currentResolution;
+            Screen.SetResolution(resolucionNativa.width, resolucionNativa.height, FullScreenMode.FullScreenWindow);
+        }
+        else
+        {
+            // Modo ventana: fuerza dimensiones constantes de 1280x720
+            Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
+        }
         
         PlayerPrefs.SetInt(FULLSCREEN_KEY, isFullscreen ? 1 : 0);
         PlayerPrefs.Save(); // GUARDADO INMEDIATO
