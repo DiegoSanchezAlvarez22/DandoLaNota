@@ -219,9 +219,9 @@ public class TeacherAI : MonoBehaviour
         currentState = TeacherState.Catching;
         agent.isStopped = true;
 
-        //questionMarkIcon.SetActive(false);
-        //exclamationMarkIcon.SetActive(true);
+        if (sonidoEnfado != null) AudioSource.PlayClipAtPoint(sonidoEnfado, transform.position);
         if (exclamationMarkIcon != null) exclamationMarkIcon.SetActive(true);
+
         // Obtenemos los puntos directamente del ScriptableObject de la jugarreta actual, o 25 por defecto
         int puntosDeLaGamberrada = 25;
         if (playerInvolucrado != null && playerInvolucrado.CurrentPrankData != null)
