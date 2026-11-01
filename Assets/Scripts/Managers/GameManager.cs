@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Estado de la Partida Actual")]
     // Tiempo restante de la partida en curso
-    [SerializeField] private float currentMatchTime;
+    [SerializeField] public float currentMatchTime;
     // Puntos de risa acumulados
     [SerializeField] private int currentLaughPoints = 0;
     // Puntos de castigo acumulados
@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void BeginMatchTimer()
     {
+        currentMatchTime = matchDurationSeconds;
         isMatchActive = true;
         Time.timeScale = 1f;
 
